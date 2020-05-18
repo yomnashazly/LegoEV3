@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Blockly for the Web Codelab</title>
+
+  <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body mode="maker">
+  <header class="header">
+    <div>
+      <!-- <img style= "float:left" src="images/lego.png" alt="EV3" height="80" width="200"/> -->
+
+      <!-- <h1 class="mode-maker">Robotic visual language</h1>  -->
+      <!-- <h1 style="text-align:center" class="mode-edit mode-blockly">CONFIGURATION</h1> -->
+    </div>
+    <div>
+      <h1 style="text-align:center">
+        <h1 style="header">
+          <!-- <img style= "float:left" src="images/lego.png" alt="EV3" height="80" width="200"/> -->
+          Robotic visual language</h1>
+      </h1>
+    </div>
+  </header>
+
+  <script>
+    function themefunction() {
+      var e = document.getElementById("theme");
+      theme = e.options[e.selectedIndex].value;
+      console.log("theme in theme func", theme);
+      if (theme == "Dark")
+        Blockly.getMainWorkspace().setTheme(Blockly.Themes.Dark);
+      if (theme == "Classic")
+        Blockly.getMainWorkspace().setTheme(Blockly.Themes.Classic);
+      if (theme == "HighContrast")
+        Blockly.getMainWorkspace().setTheme(Blockly.Themes.HighContrast);
+      if (theme == "Modern")
+        Blockly.getMainWorkspace().setTheme(Blockly.Themes.Modern);
+      if (theme == "Zelos")
+        Blockly.getMainWorkspace().setTheme(Blockly.Themes.Zelos);
+        if (theme == "Tritanopia")
+        Blockly.getMainWorkspace().setTheme(Blockly.Themes.Tritanopia);
+    if (theme == "Deuteranopia")
+        Blockly.getMainWorkspace().setTheme(Blockly.Themes.Deuteranopia);
+    }
+  </script>
+
+
+<div id="redirect-div" class="redirect-div">
+  <!-- <div class="container"><div class="center"><button id="myButton" class="redirect" >Simulate</button><script type="text/javascript">document.getElementById("myButton").onclick = function () {location.href = "../../../../LegoMinstormSimulation/indexX.html";};</script></div></div>; -->
+</div>
+
+<script id="script" type="text/javascript"></script>
+
+</script>
+
+
+  <main class="main">
+    <div class="div">
+      <div class="container">
+        <div id="buttons" class="center">
+          <button class="create" id="create">Create new Workspace</button>
+        </div>
+        <label for="theme" class="theme2">Choose a theme:</label><select class="theme" id="theme" onchange="themefunction()">
+          <option value="Dark">Dark</option>
+          <option value="Modern">Modern</option>
+          <option value="HighContrast">High contrast</option>
+          <option value="Classic">Classic</option>
+          <option value="Tritanopia">Tritanopia</option>
+          <option value="Deuteranopia">Deuteranopia</option>
+          <option value="Zelos">Zelos</option>
+
+        </select>
+      </div>
+      <p class="p">Available Workspaces:</p>
+    </div>
+    <!-- <div class="container">
+      <div class="center">
+        <button  id= "JSbuttons" class="JSbuttons" onclick="showCode()">Show JavaScript</button>
+        <button id= "JSbuttons" class="JSbuttons" onclick="runCode()">Run JavaScript</button>      
+      </div>
+    </div> -->
+
+
+    <div>
+      <button class="mode-maker mdl-button" id="edit">Edit</button>
+
+    </div>
+
+    <!-- <button class="mode-edit mdl-button mdl-js-button" id="done">Done</button> -->
+    <!-- <button class="mode-blockly mdl-button mdl-js-button" id="save">Save</button> -->
+    <p class="hint mode-edit">Tap any button to edit its code. <br />When complete, press Done.</p>
+
+    <div class="div">
+      <table id="myTable" class="table">
+        <thead>
+        <tbody>
+          <tr id="workspace_number"></tr>
+        </tbody>
+
+        </thead>
+      </table>
+
+    </div>
+
+    <div class="maker">
+      <div>
+        <button id="Go" class="button">Go to workspace</button>
+      </div>
+    </div>
+
+
+    <div class="blockly-editor">
+      <div id="blockly-div" style="height: 500px; width: 100%;"></div>
+      <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none"
+        toolboxBackgroundColour="blue">
+        <category name="Loops" colour="120">
+          <block type="controls_repeat_ext">
+            <value name="TIMES">
+              <shadow type="math_number">
+                <field name="NUM">5</field>
+              </shadow>
+            </value>
+          </block>
+        </category>
+
+        <category name="Math" colour="200">
+
+          <block type="controls_if"></block>
+          <block type="controls_repeat_ext"></block>
+          <block type="logic_compare"></block>
+          <block type="math_number"></block>
+          <block type="math_arithmetic"></block>
+          <block type="text"></block>
+          <block type="text_print"></block>
+
+        </category>
+        <category name="Logic" categorystyle="logic_category">
+          <block type="logic_compare"></block>
+          <block type="logic_operation"></block>
+          <block type="logic_boolean"></block>
+          <block type="controls_if"></block>
+          <block type="logic_negate"></block>
+          <block type="logic_ternary"></block>
+        </category>
+        </category>
+        <category name="Text" colour="160">
+          <block type="text"></block>
+          <block type="text_join"></block>
+          <block type="text_append">
+            <value name="TEXT">
+              <block type="text"></block>
+            </value>
+          </block>
+          <block type="text_length">
+            <value name="VALUE">
+              <block type="text">
+                <field name="TEXT">abc</field>
+              </block>
+            </value>
+          </block>
+          <block type="text_isEmpty">
+            <value name="VALUE">
+              <block type="text">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+          </block>
+          <block type="text_indexOf">
+            <value name="VALUE">
+              <block type="variables_get">
+                <field name="VAR">text</field>
+              </block>
+            </value>
+            <value name="FIND">
+              <block type="text">
+                <field name="TEXT">abc</field>
+              </block>
+            </value>
+          </block>
+          <block type="text_charAt">
+            <value name="VALUE">
+              <block type="variables_get">
+                <field name="VAR">text</field>
+              </block>
+            </value>
+          </block>
+          <block type="text_getSubstring">
+            <value name="STRING">
+              <block type="variables_get">
+                <field name="VAR">text</field>
+              </block>
+            </value>
+          </block>
+          <block type="text_changeCase">
+            <value name="TEXT">
+              <block type="text">
+                <field name="TEXT">abc</field>
+              </block>
+            </value>
+          </block>
+          <block type="text_trim">
+            <value name="TEXT">
+              <block type="text">
+                <field name="TEXT">abc</field>
+              </block>
+            </value>
+          </block>
+          <block type="text_print">
+            <value name="TEXT">
+              <block type="text">
+                <field name="TEXT">abc</field>
+              </block>
+            </value>
+          </block>
+          <block type="text_prompt_ext">
+            <value name="TEXT">
+              <block type="text">
+                <field name="TEXT">abc</field>
+              </block>
+            </value>
+          </block>
+        </category>
+        <category name="Lists" colour="260">
+          <block type="lists_create_with">
+            <mutation items="0"></mutation>
+          </block>
+          <block type="lists_create_with"></block>
+          <block type="lists_repeat">
+            <value name="NUM">
+              <block type="math_number">
+                <field name="NUM">5</field>
+              </block>
+            </value>
+          </block>
+          <block type="lists_length"></block>
+          <block type="lists_isEmpty"></block>
+          <block type="lists_indexOf">
+            <value name="VALUE">
+              <block type="variables_get">
+                <field name="VAR">list</field>
+              </block>
+            </value>
+          </block>
+          <block type="lists_getIndex">
+            <value name="VALUE">
+              <block type="variables_get">
+                <field name="VAR">list</field>
+              </block>
+            </value>
+          </block>
+          <block type="lists_setIndex">
+            <value name="LIST">
+              <block type="variables_get">
+                <field name="VAR">list</field>
+              </block>
+            </value>
+          </block>
+          <block type="lists_getSublist">
+            <value name="LIST">
+              <block type="variables_get">
+                <field name="VAR">list</field>
+              </block>
+            </value>
+          </block>
+          <block type="lists_split">
+            <value name="DELIM">
+              <block type="text">
+                <field name="TEXT">,</field>
+              </block>
+            </value>
+          </block>
+        </category>
+
+        <!-- <category name="Sounds" colour="355">
+          <block type="play_sound"></block>
+        </category> -->
+        <category name="custom blocks" colour="500">
+          <block type="print"></block>
+          <block type="wait"></block>
+          <block type="wait_until"></block>
+
+
+        </category>
+        <category name="custom blocks for ev3" colour="500">
+          <block type="color_sensor"></block>
+          <block type="touch_sensor"></block>
+          <block type="get_color"></block>
+          <block type="stop"></block>
+          <block type="stop_motor"></block>
+          <block type="get_distance"></block>
+          <block type="light_intensity"></block>
+          <block type="is_distance"></block>
+          <block type="is_angle"></block>
+          <block type="reset_angle"></block>
+          <block type="get_angle"></block>
+
+
+
+
+        </category>
+
+
+        <!-- <category name="new" colour="355">
+           
+  <block type="controls_for">
+    <value name="FROM">
+      <block type="math_number">
+        <field name="NUM">1</field>
+      </block>
+    </value>
+    <value name="TO">
+      <block type="math_number">
+        <field name="NUM">10</field>
+      </block>
+    </value>
+    <value name="BY">
+      <block type="math_number">
+        <field name="NUM">1</field>
+      </block>
+    </value>
+  </block>
+
+  <block type="math_arithmetic">
+    <field name="OP">ADD</field>
+    <value name="A">
+      <shadow type="math_number">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <value name="B">
+      <shadow type="math_number">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="math_number" gap="32">
+    <field name="NUM">123</field>
+  </block>
+  <block type="math_arithmetic">
+    <value name="A">
+      <block type="math_number">
+        <field name="NUM">1</field>
+      </block>
+    </value>
+    <value name="B">
+      <block type="math_number">
+        <field name="NUM">1</field>
+      </block>
+    </value>
+  </block>
+  <block type="math_single">
+    <value name="NUM">
+      <block type="math_number">
+        <field name="NUM">9</field>
+      </block>
+    </value>
+  </block>
+  <block type="math_trig">
+    <value name="NUM">
+      <block type="math_number">
+        <field name="NUM">45</field>
+      </block>
+    </value>
+  </block>
+  <block type="math_constant"></block>
+  <block type="math_number_property">
+    <value name="NUMBER_TO_CHECK">
+      <block type="math_number">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+  </block>
+  <block type="math_round">
+    <value name="NUM">
+      <block type="math_number">
+        <field name="NUM">3.1</field>
+      </block>
+    </value>
+  </block>
+  <block type="math_on_list"></block>
+  <block type="math_modulo">
+    <value name="DIVIDEND">
+      <block type="math_number">
+        <field name="NUM">64</field>
+      </block>
+    </value>
+    <value name="DIVISOR">
+      <block type="math_number">
+        <field name="NUM">10</field>
+      </block>
+    </value>
+  </block>
+  <block type="math_constrain">
+    <value name="VALUE">
+      <block type="math_number">
+        <field name="NUM">50</field>
+      </block>
+    </value>
+    <value name="LOW">
+      <block type="math_number">
+        <field name="NUM">1</field>
+      </block>
+    </value>
+    <value name="HIGH">
+      <block type="math_number">
+        <field name="NUM">100</field>
+      </block>
+    </value>
+  </block>
+  <block type="math_random_int">
+    <value name="FROM">
+      <block type="math_number">
+        <field name="NUM">1</field>
+      </block>
+    </value>
+    <value name="TO">
+      <block type="math_number">
+        <field name="NUM">100</field>
+      </block>
+    </value>
+  </block>
+  <block type="math_random_float"></block>
+
+</category> -->
+        <category name="Variables" colour="330" custom="VARIABLE"></category>
+        <category name="Functions" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
+
+        <!-- <category name="Colors" colour="80">
+<block type="colour_blend">
+  <value name="COLOUR1">
+    <shadow type="colour_picker">
+      <field name="COLOUR">#ff0000</field>
+    </shadow>
+  </value>
+  <value name="COLOUR2">
+    <shadow type="colour_picker">
+      <field name="COLOUR">#3333ff</field>
+    </shadow>
+  </value>
+  <value name="RATIO">
+    <shadow type="math_number">
+      <field name="NUM">0.5</field>
+    </shadow>
+  </value>
+</block>
+</category> -->
+
+      </xml>
+    </div>
+  </main>
+
+
+
+
+  <script src="../../../blockly_compressed.js"></script>
+  <script src="../../../javascript_compressed.js"></script>
+  <script src="../../../blocks_compressed.js"></script>
+  <script src="../../../msg/js/en.js"></script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDKzvFhUtFXHMY7wAsP_cJVRujBWIDAo2M",
+      authDomain: "blockly-caec3.firebaseapp.com",
+      databaseURL: "https://blockly-caec3.firebaseio.com",
+      projectId: "blockly-caec3",
+      storageBucket: "blockly-caec3.appspot.com",
+      messagingSenderId: "566855991259",
+      appId: "1:566855991259:web:f0d407cdd5fe18c2ff31fe"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script>
+    function loaded() {
+      console.log("3");
+    }
+  </script>
+
+  <script onload="loaded()">
+
+    console.log("1")
+    firebase.firestore().collection('workspaces').orderBy("number", "asc").get().then(async function (querySnapshot) {
+      await querySnapshot.forEach(function (doc) {
+        // console.log("hi",doc.data().number);
+
+        var number = doc.data().number;
+        // var id = doc.data().sort;
+
+        $('#workspace_number').append('<th id="workspace' + number + '">' + number + '</th>');
+        // $('#workspace_id').append('<td>' + id + '</td>');
+
+      })
+      console.log("2");
+    })
+
+  </script>
+
+  <!-- <script src="scripts/firebase.js"></script> -->
+  <script src="scripts/main.js"></script>
+
+  <script src="scripts/music_maker.js"></script>
+  <script src="scripts/sound_blocks.js"></script>
+  <script src="scripts/print.js"></script>
+  <script src="scripts/ev3.js"></script>
+  <!-- <script src="scripts/color_sensor.js"></script>
+  <script src="scripts/touch_sensor.js"></script> -->
+  <script src="scripts/stop.js"></script>
+  <script src="scripts/stop_motor.js"></script>
+  <script src="scripts/wait_until.js"></script>
+  <script src="scripts/ev3.js"></script>
+
+  <script src="scripts/jquery-3.3.1.min.js"></script>
+  <script src="scripts/jquery-3.3.1.js"></script>
+
+
+  <!-- <script src="/__/firebase/7.14.1/firebase-app.js"></script>
+<script src="/__/firebase/7.14.1/firebase-firestore.js"></script> -->
+
+
+
+  <!-- <script>
+  var workspaceChanged = function() {
+            window.alert("changed");
+    }
+    Blockly.addChangeListener(workspaceChanged);
+
+  </script> -->
+
+  <script>
+    function myUniqueID() {
+      return Math.random().toString(36).slice(2);
+    };
+    var ID = myUniqueID();
+    console.log(ID);
+
+  </script>
+
+
+  <script>
+    var blocklyArea = document.getElementById('blocklyArea');
+    var workspace = Blockly.inject('blocklyDiv',
+      { toolbox: document.getElementById('toolbox') });
+
+    Blockly.JavaScript.STATEMENT_PREFIX = 'highlightBlock(%1);\n';
+    Blockly.JavaScript.addReservedWords('highlightBlock');
+    function highlightBlock(id) { workspace.highlightBlock(id); }
+
+
+
+    function showCode() {
+      //Generate Javascript code and display it
+      Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+      var code = Blockly.JavaScript.workspaceToCode(workspace);
+      alert(code);
+    }
+
+
+    Blockly.Themes.Dark = Blockly.Theme.defineTheme('dark', {
+      'base': Blockly.Themes.Classic,
+      'componentStyles': {
+        'workspaceBackgroundColour': '#1e1e1e',
+        'toolboxBackgroundColour': '#333',
+        'toolboxForegroundColour': '#fff',
+        'flyoutBackgroundColour': '#252526',
+        'flyoutForegroundColour': '#ccc',
+        'flyoutOpacity': 1,
+        'scrollbarColour': '#797979',
+        'insertionMarkerColour': '#fff',
+        'insertionMarkerOpacity': 0.3,
+        'scrollbarOpacity': 0.4,
+        'cursorColour': '#d0d0d0'
+      }
+    });
+
+    function runCode() {
+      // Generate JavaScript code and run it.
+      var code = Blockly.JavaScript.workspaceToCode(workspace);
+      window.LoopTrap = 1000;
+      Blockly.JavaScript.INFINITE_LOOP_TRAP =
+        'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
+      Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+      try {
+        eval(code);
+      } catch (e) {
+        alert(e);
+      }
+    }
+  </script>
+
+
+
+
+
+
+  <!-- getting data of clicked cell -->
+  <!-- <script>
+   $('tr').click(function(e) {
+    var txt = $(e.target).text();
+    console.log(txt);
+ });
+</script> -->
+
+  <!-- writing data into table -->
+
+
+</body>
+
+</html>
