@@ -174,7 +174,7 @@ function init() {
 	//   ),
 	// });
 
-	 imgTexture = THREE.ImageUtils.loadTexture( "/colour.jpg" );
+	 imgTexture = THREE.ImageUtils.loadTexture( "/LegoMinstormSimulation/colour.jpg" );
 
 	var material = new THREE.MeshBasicMaterial( { map: imgTexture } );
 	// // Load an image file into a custom material
@@ -262,7 +262,7 @@ function displayRobotSim() {
 			// });
 
 			var loader = new THREE.ObjectLoader();
-			loader.load( "/LegoRobot/wheel.dae (1).json", function ( object2 ) {
+			loader.load( "/LegoMinstormSimulation/LegoRobot/wheel.dae (1).json", function ( object2 ) {
 				//group = new THREE.Group();
 
 				//group.add(object);
@@ -284,7 +284,7 @@ function displayRobotSim() {
 			} );
 
 			var loader = new THREE.ObjectLoader();
-			loader.load( "/LegoRobot/wheel.dae (1).json", function ( object3 ) {
+			loader.load( "/LegoMinstormSimulation/LegoRobot/wheel.dae (1).json", function ( object3 ) {
 				//group = new THREE.Group();
 
 				//group.add(object);
@@ -305,7 +305,7 @@ function displayRobotSim() {
 			} );
 
 			var loader = new THREE.ObjectLoader();
-			loader.load( "/LegoRobot/wheel.dae (1).json", function ( object4 ) {
+			loader.load("/LegoMinstormSimulation/LegoRobot/wheel.dae (1).json", function ( object4 ) {
 				//group = new THREE.Group();
 
 				//group.add(object);
@@ -325,7 +325,7 @@ function displayRobotSim() {
 			} );
 
 			var loader = new THREE.ObjectLoader();
-			loader.load( "/LegoRobot/wheel.dae (1).json", function ( object5 ) {
+			loader.load("/LegoMinstormSimulation/LegoRobot/wheel.dae (1).json", function ( object5 ) {
 				//group = new THREE.Group();
 
 				//group.add(object);
@@ -344,7 +344,7 @@ function displayRobotSim() {
 				scene.add( object5 );
 			} );
 			var loader = new THREE.ObjectLoader();
-			loader.load( "/LegoRobot/wheel.dae (1).json", function ( object6 ) {
+			loader.load( "/LegoMinstormSimulation/LegoRobot/wheel.dae (1).json", function ( object6 ) {
 				//group = new THREE.Group();
 
 				//group.add(object);
@@ -364,7 +364,7 @@ function displayRobotSim() {
 			} );
 
 			var loader = new THREE.ObjectLoader();
-			loader.load( "/LegoRobot/wheel.dae (1).json", function ( object7 ) {
+			loader.load( "/LegoMinstormSimulation/LegoRobot/wheel.dae (1).json", function ( object7 ) {
 				//group = new THREE.Group();
 
 				//group.add(object);
