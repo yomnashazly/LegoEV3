@@ -79,7 +79,7 @@ h1 {
 .button {
   background-color: rgb(30, 22, 133);
   border: none;
-  color: black;
+  color: white;
   border-radius: 8px;
   padding: 12px 28px;
   text-align: center;
@@ -230,6 +230,7 @@ h1 {
  position: relative;
  left: 140px;
  top: 45px;
+ color: white;
 }
 .theme{
   float: right;

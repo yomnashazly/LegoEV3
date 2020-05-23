@@ -2,16 +2,11 @@
 function simulation() {
 
 
+ try{
+	 eval(localStorage.getItem("code"));
+ }catch(e){
+	 alert(e);
+ }
 
-
-	// colourSensorAmbientFunction();
-	//debugger;
-	//ultrasonicSensorFunction();
-	// colourSensorFunctionImage();
-	// colourSensorFunction();
-	 infraredSensorProximityFunction();
-
-	rotateRobot( 0.01 );
-//moveRobot(0.3);
 
 }

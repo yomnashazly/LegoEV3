@@ -1,5 +1,5 @@
-var color_sensor = 'yellow';
-var touch_sensor = 'pressed';
+var colourSensor = 'yellow';
+var touchSensor = 'pressed';
 
 
 //-----------------------------------------touch sensor------------------------------------------------------
@@ -18,7 +18,7 @@ Blockly.Blocks['touch_sensor'] = {
     Blockly.JavaScript['touch_sensor'] = function(block) {
       var dropdown_name = block.getFieldValue('NAME');
       // TODO: Assemble JavaScript into code variable.
-      var code = 'touch_sensor==="' + dropdown_name +'"';
+      var code = 'touchSensor==="' + dropdown_name +'"';
       // TODO: Change ORDER_NONE to the correct strength.
       return [code, Blockly.JavaScript.ORDER_NONE];
     };
@@ -38,7 +38,7 @@ Blockly.Blocks['touch_sensor'] = {
         Blockly.JavaScript['color_sensor'] = function(block) {
           var dropdown_name = block.getFieldValue('NAME');
           // TODO: Assemble JavaScript into code variable.
-          var code = 'color_sensor==="' + dropdown_name +'"';
+          var code = 'colourSensor==="' + dropdown_name +'"';
           // TODO: Change ORDER_NONE to the correct strength.
           return [code, Blockly.JavaScript.ORDER_NONE];
         };
@@ -57,7 +57,7 @@ Blockly.Blocks['touch_sensor'] = {
 
           Blockly.JavaScript['get_color'] = function(block) {
             // TODO: Assemble JavaScript into code variable.
-            var code = '"'+color_sensor+'"';
+            var code = 'colourSensor';
             // TODO: Change ORDER_NONE to the correct strength.
             return [code, Blockly.JavaScript.ORDER_NONE];
           };
@@ -67,7 +67,7 @@ Blockly.Blocks['touch_sensor'] = {
 Blockly.Blocks['get_distance'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"],["4","4"]]), "NAME")
+        // .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"],["4","4"]]), "NAME")
         .appendField("distance that infrared sensor detects in ")
         .appendField(new Blockly.FieldDropdown([["cm","cm"], ["inches","inches"]]), "NAME");
     this.setOutput(true, null);
@@ -88,8 +88,8 @@ Blockly.JavaScript['get_distance'] = function(block) {
 Blockly.Blocks['light_intensity'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"],["3","3"], ["4","4"]]), "NAME")
-        .appendField("Is reflected light intensity")
+        // .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"],["3","3"], ["4","4"]]), "NAME")
+        .appendField("Reflected light intensity")
         .appendField(new Blockly.FieldDropdown([["<","<"], [">",">"], ["=","="]]), "NAME")
         .appendField(new Blockly.FieldTextInput("15"), "light_intensity")
         .appendField(new Blockly.FieldDropdown([["cm","cm"], ["inches","inches"]]), "NAME")
@@ -112,11 +112,11 @@ Blockly.JavaScript['light_intensity'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 //-----------------------------------is distance </>/= kaza ------------------------------------
-Blockly.Blocks['is_distance'] = {
+Blockly.Blocks['is_distance_infrared'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"],["4","4"]]), "port")
-        .appendField("Is distance")
+        // .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"],["4","4"]]), "port")
+        .appendField("Distance of infrared")
         .appendField(new Blockly.FieldDropdown([["<","<"], [">",">"], ["=","="]]), "NAME")
         .appendField(new Blockly.FieldTextInput("15"), "distance")
         .appendField(new Blockly.FieldDropdown([["cm","cm"], ["inches","inches"], ["option","OPTIONNAME"]]), "NAME")
@@ -127,7 +127,33 @@ Blockly.Blocks['is_distance'] = {
  this.setHelpUrl("");
   }
 };
-Blockly.JavaScript['is_distance'] = function(block) {
+Blockly.JavaScript['is_distance_infrared'] = function(block) {
+  var dropdown_name = block.getFieldValue('NAME');
+  var dropdown_name = block.getFieldValue('NAME');
+  var text_distance = block.getFieldValue('distance');
+  var dropdown_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+//-----------------------------------is distance </>/= kaza ultrasonic------------------------------------
+Blockly.Blocks['is_distance_ultrasonic'] = {
+  init: function() {
+    this.appendDummyInput()
+        // .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"],["4","4"]]), "port")
+        .appendField("Distance of ultrasonic")
+        .appendField(new Blockly.FieldDropdown([["<","<"], [">",">"], ["=","="]]), "NAME")
+        .appendField(new Blockly.FieldTextInput("15"), "distance")
+        .appendField(new Blockly.FieldDropdown([["cm","cm"], ["inches","inches"], ["option","OPTIONNAME"]]), "NAME")
+        .appendField("?");
+        this.setOutput(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['is_distance_ultrasonic'] = function(block) {
   var dropdown_name = block.getFieldValue('NAME');
   var dropdown_name = block.getFieldValue('NAME');
   var text_distance = block.getFieldValue('distance');
@@ -141,7 +167,6 @@ Blockly.JavaScript['is_distance'] = function(block) {
 Blockly.Blocks['get_angle'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"],["4","4"]]), "port")
         .appendField("angle");
     this.setOutput(true, null);
     this.setColour(230);
@@ -152,7 +177,7 @@ Blockly.Blocks['get_angle'] = {
 Blockly.JavaScript['get_angle'] = function(block) {
   var dropdown_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...';
+  var code = 'getAngle()';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
@@ -160,8 +185,7 @@ Blockly.JavaScript['get_angle'] = function(block) {
 Blockly.Blocks['reset_angle'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"],["4","4"]]), "port")
-        .appendField("reset angle");
+        .appendField("Reset angle");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(230);
@@ -173,16 +197,15 @@ Blockly.Blocks['reset_angle'] = {
 Blockly.JavaScript['reset_angle'] = function(block) {
   var dropdown_port = block.getFieldValue('port');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = 'resetAngle();';
   return code;
 };
 //---------------------------------------------is angle </>/= kaza degrees--------------------------------
 Blockly.Blocks['is_angle'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"],["4","4"]]), "port")
-        .appendField("is angle")
-        .appendField(new Blockly.FieldDropdown([["<","<"], [">",">"], ["=","="]]), "NAME")
+        .appendField("Angle")
+        .appendField(new Blockly.FieldDropdown([["<","<"], [">",">"], ["=","=="]]), "operation")
         .appendField(new Blockly.FieldAngle(45), "NAME")
         .appendField("?");
     this.setOutput(true, null);
@@ -193,11 +216,12 @@ Blockly.Blocks['is_angle'] = {
 };
 Blockly.JavaScript['is_angle'] = function(block) {
   var dropdown_name = block.getFieldValue('NAME');
-  var dropdown_name = block.getFieldValue('NAME');
+  var operation = block.getFieldValue('operation');
   var angle_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...';
+  var code = 'gyroSensorTotalAngleRotation'+operation+angle_name;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 //-----------------------------------------------------------------------------------------------------
+

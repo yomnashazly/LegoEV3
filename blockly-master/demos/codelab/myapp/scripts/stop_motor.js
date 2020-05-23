@@ -1,19 +1,18 @@
-Blockly.Blocks['stop_motor'] = {
+Blockly.Blocks['stop_moving'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("stop motor")
-          .appendField(new Blockly.FieldDropdown([["A","A"], ["B","B"], ["C","C"], ["D","D"]]), "NAME");
+          .appendField("Stop moving!")
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour('red');
    this.setTooltip("");
    this.setHelpUrl("");
     }
   };
   
-  Blockly.JavaScript['stop_motor'] = function(block) {
+  Blockly.JavaScript['stop_moving'] = function(block) {
     var dropdown_name = block.getFieldValue('NAME');
     // TODO: Assemble JavaScript into code variable.
-    var code = '...;\n';
+    var code = 'stopMoving();';
     return code;
   };

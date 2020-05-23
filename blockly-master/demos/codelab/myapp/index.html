@@ -22,7 +22,7 @@
     </div>
     <div>
       <h1 style="text-align:center">
-        <h1 style="header">
+        <h1 class="header">
           <!-- <img style= "float:left" src="images/lego.png" alt="EV3" height="80" width="200"/> -->
           Robotic visual language</h1>
       </h1>
@@ -292,11 +292,12 @@
           <block type="color_sensor"></block>
           <block type="touch_sensor"></block>
           <block type="get_color"></block>
-          <block type="stop"></block>
-          <block type="stop_motor"></block>
+          <!-- <block type="stop"></block> -->
+          <block type="stop_moving"></block>
           <block type="get_distance"></block>
-          <block type="light_intensity"></block>
-          <block type="is_distance"></block>
+          <!-- <block type="light_intensity"></block> -->
+          <block type="is_distance_infrared"></block>
+          <block type="is_distance_ultrasonic"></block>
           <block type="is_angle"></block>
           <block type="reset_angle"></block>
           <block type="get_angle"></block>
@@ -519,7 +520,7 @@
   <script src="scripts/ev3.js"></script>
   <!-- <script src="scripts/color_sensor.js"></script>
   <script src="scripts/touch_sensor.js"></script> -->
-  <script src="scripts/stop.js"></script>
+  <!-- <script src="scripts/stop.js"></script> -->
   <script src="scripts/stop_motor.js"></script>
   <script src="scripts/wait_until.js"></script>
   <script src="scripts/ev3.js"></script>
@@ -551,7 +552,57 @@
   </script>
 
 
-  <script src ="scripts/functions.js" ></script>
+  <script>
+    var blocklyArea = document.getElementById('blocklyArea');
+    var workspace = Blockly.inject('blocklyDiv',
+      { toolbox: document.getElementById('toolbox') });
+
+    Blockly.JavaScript.STATEMENT_PREFIX = 'highlightBlock(%1);\n';
+    Blockly.JavaScript.addReservedWords('highlightBlock');
+    function highlightBlock(id) { workspace.highlightBlock(id); }
+
+
+
+    function showCode() {
+      //Generate Javascript code and display it
+      Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+      var code = Blockly.JavaScript.workspaceToCode(workspace);
+      localStorage.setItem("code",code);
+      alert(code);
+    }
+
+
+    Blockly.Themes.Dark = Blockly.Theme.defineTheme('dark', {
+      'base': Blockly.Themes.Classic,
+      'componentStyles': {
+        'workspaceBackgroundColour': '#1e1e1e',
+        'toolboxBackgroundColour': '#333',
+        'toolboxForegroundColour': '#fff',
+        'flyoutBackgroundColour': '#252526',
+        'flyoutForegroundColour': '#ccc',
+        'flyoutOpacity': 1,
+        'scrollbarColour': '#797979',
+        'insertionMarkerColour': '#fff',
+        'insertionMarkerOpacity': 0.3,
+        'scrollbarOpacity': 0.4,
+        'cursorColour': '#d0d0d0'
+      }
+    });
+
+    function runCode() {
+      // Generate JavaScript code and run it.
+      var code = Blockly.JavaScript.workspaceToCode(workspace);
+      window.LoopTrap = 1000;
+      Blockly.JavaScript.INFINITE_LOOP_TRAP =
+        'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
+      Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+      try {
+        eval(code);
+      } catch (e) {
+        alert(e);
+      }
+    }
+  </script>
 
 
 

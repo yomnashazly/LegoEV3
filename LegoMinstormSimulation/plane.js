@@ -517,7 +517,7 @@ function animate() {
 		camera.position.z = body.position.z;
 	}
 
-	 document.getElementById( "function" ).innerHTML = simulation.toString();
+	 document.getElementById( "function" ).innerHTML = localStorage.getItem("code");
 
 	// Keyboard movement inputs6
 	if ( keyboard[ 87 ] ) {
