@@ -64,6 +64,20 @@ var value = new Array( group.children.length );
 
 			value[ i ] = true;
 			colourSensor = child.material.color.getHexString();
+		//	colourSensor = child.material.color.g;
+			var string = "#"+ colourSensor ;
+			let result = ntc.name(string);
+colourSensor = result;
+// let rgb_value = result[0];      // #6495ed         : RGB value of closest match
+ let specific_name = result[1];  // Cornflower Blue : Color name of closest match
+// let shade_value = result[2];    // #0000ff         : RGB value of shade of closest match
+// let shade_name = result[3];     // Blue            : Color name of shade of closest match
+// let is_exact_match = result[4];
+ colourSensor = specific_name;
+
+
+
+
 			document.getElementById( 'Colour' ).innerHTML =
         'Colour Sensor = On, Mode = Colour, Value = ' + colourSensor;
 
@@ -87,7 +101,7 @@ var value = new Array( group.children.length );
 	}
 	if ( counter == 0 ) {
 
-		colourSensor = 0;
+		colourSensor = "No Colour";
 		document.getElementById( 'Colour' ).innerHTML =
     'Colour Sensor = On, Mode = Colour, Value = ' + colourSensor;
 
@@ -130,10 +144,10 @@ function colourSensorAmbientFunction() {
 	//       "Colour Sensor = On, Mode = Ambient Light Intensity";
 	//   }
 	// }
-
+colourSensorAmbient =    light.intensity * 100;
 	document.getElementById( 'Colour' ).innerHTML =
-    'Colour Sensor = On, Mode = Ambient Light Intensity, Value = ' +
-    light.intensity * 100;
+    'Colour Sensor = On, Mode = Ambient Light Intensity, Value = ' +colourSensorAmbient;
+ 
 
 }
 
@@ -1081,4 +1095,23 @@ function toScreenPosition( obj, camera ) {
 	pixelX = vector.x + 75;
 	pixelY = vector.y + 300;
 
+}
+
+function getAngle(){
+	return gyroSensorTotalAngleRotation;
+}
+
+function getUltrasonic(){
+	return ultrasonicSensor;
+
+}
+
+function getInfrared(){
+	return infraredSensor;
+}
+function getTouchSensor(){
+	return touchSensor;
+}
+function getColourSensor(){
+	return colourSensor;
 }

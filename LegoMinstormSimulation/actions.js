@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 function moveRobot( hyp ) {
 
+	if (move == true){ 
 	if ( gyroSensorTotalAngleRotation == 0 ) {
 
 		wheel.position.x += - hyp;
@@ -216,15 +217,37 @@ function moveRobot( hyp ) {
 	wheel4.rotateY( ( hyp * 0.02 ) / 0.033 );
 	wheel5.rotateY( ( hyp * 0.02 ) / 0.033 );
 	wheel6.rotateY( ( hyp * 0.02 ) / 0.033 );
-
+	}
 }
-function stopRobot() {
+function stopMoving() {
 
 	move = false;
 
 }
+function startMoving() {
+
+	move = true;
+
+}
+function stopRotate() {
+
+	rotate = false;
+
+}
+function startRotate() {
+
+	rotate = true;
+
+}
+
+function resetAngle(){
+	gyroSensorTotalAngleRotation = 0;
+}
+
+
 function rotateRobot( ang ) {
 
+	if (rotate == true){
 	var x = wheel.position.x - robotX;
 	// //console.log (x);
 
@@ -506,10 +529,6 @@ function rotateRobot( ang ) {
 	}
 	body.rotateY( - ang );
 	camera.rotation.z -= ang;
-
+	}
 }
-function stopRotateRobot() {
 
-	rotate = false;
-
-}
