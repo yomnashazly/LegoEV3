@@ -155,7 +155,7 @@ document.getElementById("workspace_number").style.columnWidth= 90/number;
     // document.getElementById("create").style.display = 'none';
     document.getElementById("create").style.visibility = 'hidden';
     document.getElementById('buttons').innerHTML = '<button  id= "JSbuttons" class="JSbuttons" onclick="showCode()">Show JavaScript</button><button id= "JSbuttons" class="JSbuttons" onclick="runCode()">Run JavaScript</button>';
-    document.getElementById('redirect-div').innerHTML = '<div class="container"><div class="center"><button id="myButton" class="redirect" >Simulate</button></div></div>';
+    document.getElementById('redirect-div').innerHTML = '    <a href="javascript:history.go(0)" class="back">&laquo; Home</a>    <div class="container"><div class="center"><button id="myButton" class="redirect" >Simulate</button></div></div>';
     document.getElementById('script').innerHTML = 'document.getElementById("myButton").onclick = function () {location.href = "../../../../LegoMinstormSimulation/indexX.html";};';
 
     console.log("in loadworkspace function", number);

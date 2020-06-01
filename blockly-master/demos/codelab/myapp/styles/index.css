@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 
 main {
   /* background-color: rgb(206, 222, 241); */
@@ -118,7 +119,7 @@ h1 {
   position: relative;
   top: 60px;
   width: 80%;
-  background-color: rgb(76, 76, 77);
+  background-color: rgb(182, 182, 219);
   margin-left:auto; 
   margin-right:auto;
   table-layout: fixed;
@@ -138,9 +139,9 @@ h1 {
 }
 .active, .table th:hover{
   cursor: pointer;
-  background-color: rgb(11, 40, 204);
+  background-color: rgb(9, 24, 224);
   color : white;
-  font-size: larger; 
+  font-size: large; 
 }
 .container {
   height: 50px;
@@ -275,4 +276,74 @@ h1 {
   margin:0px;
 padding:0px;
 width:100%;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+
+.back {
+  
+  width: 110px;
+  height: 40px;
+  background: transparent;
+  /* background: linear-gradient(to bottom, #4eb5e5 0%,#389ed5 100%); W3C */
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  /* border-bottom: 4px solid #2b8bc6; */
+  color: #fbfbfb;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.4);
+  font-size: 15px;
+  text-align: left;
+  text-indent: 5px;
+  /* box-shadow: 0px 3px 0px 0px rgba(0,0,0,.2); */
+  cursor: pointer;
+
+  text-align: center;
+  padding-right: 12px;
+  box-sizing: border-box;
+}
+.back:hover{
+ font-size: larger;
+ color:white;
+}
+back:after {
+  content: "";
+  width: 0;
+  height: 0;
+  display: block;
+  border-top: 20px solid #187dbc;
+  border-bottom: 20px solid #187dbc;
+  border-left: 16px solid transparent;
+  border-right: 20px solid #187dbc;
+  position: absolute;
+  opacity: 0.6; 
+  right: 0;
+  top: 0;
+  border-radius: 0 5px 5px 0;  
+  content: "";
+  width: 0;
+  height: 0;
+  display: block;
+  border-top: 20px solid #187dbc;
+  border-bottom: 20px solid #187dbc;
+  border-right: 16px solid transparent;
+  border-left: 20px solid #187dbc;
+  position: absolute;
+  opacity: 0.6; 
+  left: 0;
+  top: 0;
+  border-radius: 5px 0 0 5px;   
+   
+}
+
+.back:active {
+  box-shadow: 0px 2px 0px 0px rgba(0,0,0,.2);
+  top: 1px;
 }
