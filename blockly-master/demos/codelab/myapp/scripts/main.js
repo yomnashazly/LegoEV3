@@ -44,7 +44,11 @@ document.getElementById("workspace_number").style.columnWidth= 90/number;
 
   function handlePlay(event) {
     console.log("in handlePlay function");
+    if(number!=undefined)
     loadWorkspace();
+    else{
+      swal("Could not open workspace", 'Please choose or create a workspace','error')
+     }
     Blockly.JavaScript.addReservedWords('code');
     var code = Blockly.JavaScript.workspaceToCode(Blockly.getMainWorkspace());
     code += 'MusicMaker.play();';
@@ -241,7 +245,11 @@ document.getElementById("workspace_number").style.columnWidth= 90/number;
     console.log("in enableBlocklyMode function");
     document.body.setAttribute('mode', 'blockly');
     // currentButton = e.target;
+    if(number!=undefined)
     loadWorkspace();
+    else{
+      window.alert("please choose or create a workspace")
+    }
   }
 
   document.querySelector('#workspace_number').addEventListener('click', enableEditMode);
