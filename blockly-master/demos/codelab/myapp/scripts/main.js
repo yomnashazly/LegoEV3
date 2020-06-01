@@ -246,9 +246,6 @@ document.getElementById("workspace_number").style.columnWidth= 90/number;
 
   document.querySelector('#workspace_number').addEventListener('click', enableEditMode);
   document.querySelector('#create').addEventListener('click', enableEditMode);
-  // document.querySelector('#done').addEventListener('click', enableMakerMode);
-  // document.querySelector('#save').addEventListener('click', handleSave);
-  // document.querySelector('#myTable').addEventListener('click', wsnumberisclicked);
   window.onload=function(){
     firebase.firestore().collection('workspaces').orderBy("number", "asc").get().then(async function (querySnapshot) {
       await querySnapshot.forEach(function (doc) {
