@@ -224,7 +224,11 @@ document.getElementById("workspace_number").style.columnWidth= 90/number;
       console.log("numberrrrrrrrrr type:",typeof number)
       console.log("nuumberrr tany:",typeof String(number))
       // createEventsTable(size+1);
-      window.alert("created successfully !")
+      swal(
+        'Created successfully!',
+        'Go to workspace',
+        'success'
+      )
   });
 // enableBlocklyMode();
   }
@@ -240,7 +244,7 @@ document.getElementById("workspace_number").style.columnWidth= 90/number;
     loadWorkspace();
   }
 
-  document.querySelector('#edit').addEventListener('click', enableEditMode);
+  document.querySelector('#workspace_number').addEventListener('click', enableEditMode);
   // document.querySelector('#done').addEventListener('click', enableMakerMode);
   // document.querySelector('#save').addEventListener('click', handleSave);
   // document.querySelector('#myTable').addEventListener('click', wsnumberisclicked);

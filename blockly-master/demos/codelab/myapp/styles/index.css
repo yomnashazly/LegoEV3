@@ -1,3 +1,4 @@
+
 main {
   /* background-color: rgb(206, 222, 241); */
   width: 100%;
@@ -51,12 +52,11 @@ h1 {
 }
 
 .maker {
-  width: 50%;
+  width:40%;
   margin: 0 auto;
   left: 500px;
   justify-content: space-between;
   height: 460px;
-  width: 200px;
   background-color:  rgb(68, 68, 70);
   /* position: absolute; */
 	/* top:500;
@@ -77,7 +77,7 @@ h1 {
   background: transparent;
 }
 .button {
-  background-color: rgb(30, 22, 133);
+  background-color: rgb(11, 40, 204);;
   border: none;
   color: white;
   border-radius: 8px;
@@ -115,6 +115,8 @@ h1 {
   display: flex;
   border-collapse: collapse;
   flex-direction: column;
+  position: relative;
+  top: 60px;
   width: 80%;
   background-color: rgb(76, 76, 77);
   margin-left:auto; 
@@ -127,13 +129,14 @@ h1 {
 .table th {
   table-layout: auto;
   /* border-left: 1px solid #000; */
+  position: relative;
   padding: 10px;
   width: auto;
   border-collapse: collapse;
   border-right: 1px solid #000;
    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
-.table th:hover{
+.active, .table th:hover{
   cursor: pointer;
   background-color: rgb(11, 40, 204);
   color : white;
@@ -173,6 +176,7 @@ h1 {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   cursor: pointer;
 }
+
 .mdl-button {
   position: relative;
   top: 38px;
@@ -184,7 +188,10 @@ h1 {
   border-radius: 8px;
 }
 .main{
+  width: 100%;
   background-color: rgb(68, 68, 70);
+  margin: 0px;
+  padding: 0px;
 }
 
 .JSbuttons {
@@ -236,9 +243,10 @@ h1 {
   float: right;
 }
 .theme2{
-  position: relative;
+  float: right;
+  /* position: relative;
   top: 0px;
-  left: 1120px;
+  left: 1120px; */
 }
 .redirect{
   background-color: rgb(118, 121, 131); /* Green */
@@ -262,4 +270,9 @@ h1 {
 }
 .redirect-div{
   background-color: rgb(68, 68, 70);
+}
+.body{
+  margin:0px;
+padding:0px;
+width:100%;
 }
