@@ -227,6 +227,7 @@ function stopMoving() {
 function startMoving() {
 
 	move = true;
+	
 
 }
 function stopRotate() {
@@ -243,7 +244,6 @@ function startRotate() {
 function resetAngle(){
 	gyroSensorTotalAngleRotation = 0;
 }
-
 
 function rotateRobot( ang ) {
 

@@ -17,7 +17,7 @@ function init() {
 	group = new THREE.Group();
 	camera = new THREE.PerspectiveCamera( 90, 1280 / 720, 0.1, 1000 );
 
-	camera.position.set( 0, 50, 0 );
+	camera.position.set(- 30, 20, 30 );
 	const color = 0xffffff;
 	const intensity = 0.5;
 	light = new THREE.AmbientLight( color, intensity );
@@ -30,7 +30,7 @@ function init() {
 	raycaster = new THREE.Raycaster();
 	mouse = new THREE.Vector2();
 
-	camera.lookAt( new THREE.Vector3( 0, player.height, 0 ) );
+	
 
 
 	triangleGeometry = new THREE.Geometry();
@@ -51,9 +51,9 @@ function init() {
 
 	triangleGeometry2 = new THREE.Geometry();
 	var z = Math.tan( ( 5 * Math.PI ) / 180 ) * 70;
-	triangleGeometry2.vertices.push( new THREE.Vector3( 0.0, 5.0, 0.0 ) );
-	triangleGeometry2.vertices.push( new THREE.Vector3( - 70.0, 5.0, - z ) );
-	triangleGeometry2.vertices.push( new THREE.Vector3( - 70.0, 5.0, z ) );
+	triangleGeometry2.vertices.push( new THREE.Vector3( 0.0, 0, 0.0 ) );
+	triangleGeometry2.vertices.push( new THREE.Vector3( - 70.0, 0, - z ) );
+	triangleGeometry2.vertices.push( new THREE.Vector3( - 70.0, 0, z ) );
 	triangleGeometry2.faces.push( new THREE.Face3( 0, 1, 2 ) );
 
 	var triangleMaterial = new THREE.MeshBasicMaterial( {
@@ -141,11 +141,21 @@ function init() {
 	group.add( cube6 );
 
 	scene.add( group );
+// 	var loader  = new THREE.TextureLoader(),
+// 	texture = loader.load( "floor.jpg" );
+// 	var material = new THREE.MeshPhongMaterial({ 
+//         map: texture,
+// });
 
+var texture = new THREE.TextureLoader().load( "floor.jpg" );
+texture.wrapS = THREE.RepeatWrapping;
+texture.wrapT = THREE.RepeatWrapping;
+texture.repeat.set( 4, 4 );
+ var material = new THREE.MeshBasicMaterial( { color: 0xffffff, map: texture } );
 	meshFloor = new THREE.Mesh(
-		new THREE.PlaneGeometry( 1000, 1000, 1000, 1000 ),
-		new THREE.MeshBasicMaterial( { color: 0x000000, wireframe: USE_WIREFRAME } )
-	);
+		new THREE.PlaneGeometry( 1000, 1000, 1000, 1000 ), material
+		 )
+	;
 	meshFloor.receiveShadow = true;
 	meshFloor.rotation.x -= Math.PI / 2; // Rotate the floor 90 degrees
 	scene.add( meshFloor );
@@ -159,9 +169,8 @@ function init() {
 	// document.body.appendChild(renderer.domElement);
 
 	renderer.setSize(
-	  window.innerWidth - window.innerWidth / 3.5,
-	  window.innerHeight - window.innerHeight / 7
-	);
+	  window.innerWidth - window.innerWidth / 2.29,
+	  window.innerHeight - window.innerHeight / 8);
 	document.body.appendChild( renderer.domElement );
 	//THREE.WebGLRenderer.compile(scene, camera);
 	//document.addEventListener("mousedown", onDocumentMouseDown, false);
@@ -217,7 +226,15 @@ function init() {
 
 //	scene.add( triangle );
 	robot = "complexRobot";
-
+	var skyGeo = new THREE.SphereGeometry(5, 5, 5); 
+	var loader  = new THREE.TextureLoader(),
+	texture = loader.load( "sky.jpg" );
+	var material = new THREE.MeshPhongMaterial({ 
+        map: texture,
+});
+var sky = new THREE.Mesh(skyGeo, material);
+    sky.material.side = THREE.BackSide;
+    scene.add(sky);
 	displayRobotSim();
 	animate();
 }
@@ -225,8 +242,17 @@ function init() {
 function displayRobotSim() {
 	if ( robot == "complexRobot" ) {
 		//alert("if condition");
-
-		var loader = new THREE.GLTFLoader();
+		const loadingManager = new THREE.LoadingManager( () => {
+	
+			const loadingScreen = document.getElementById( 'loading-screen' );
+			loadingScreen.classList.add( 'fade-out' );
+			
+			// optional: remove loader from DOM via event listener
+			loadingScreen.addEventListener( 'transitionend', onTransitionEnd );
+			
+		} );
+	
+		var loader = new THREE.GLTFLoader(loadingManager);
 		loader.load( "LegoRobot/ComplexRobot.gltf", handle_load );
 		// object;
 		renderer.setClearColor( 0xffffff );
@@ -512,12 +538,12 @@ function animate() {
 		itn += 1;
 
 		simulation();
+		camera.lookAt( new THREE.Vector3( body.x, body.y, body.z ) );
 
-		camera.position.x = body.position.x;
-		camera.position.z = body.position.z;
+		
 	}
 
-	 document.getElementById( "function" ).innerHTML = localStorage.getItem("code");
+	 
 
 	// Keyboard movement inputs6
 	if ( keyboard[ 87 ] ) {
@@ -635,7 +661,11 @@ function keyDown( event ) {
 function keyUp( event ) {
 	keyboard[ event.keyCode ] = false;
 }
+function onTransitionEnd( event ) {
 
+	event.target.remove();
+	
+}
 window.addEventListener( "keydown", keyDown );
 window.addEventListener( "keyup", keyUp );
 

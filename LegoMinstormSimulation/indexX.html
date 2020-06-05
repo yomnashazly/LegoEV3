@@ -9,14 +9,57 @@
       canvas {
         display: block;
       }
+      
     </style> -->
+    
+
+  
+  
+  
+    <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="main.css" />
   </head>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+
+
+  <header class="header colored sticky-header" data-scroll="out">
+          <div class="c-container">
+            <div class="nav-items">
+            <a href="">
+            <img class="site-logo" src="logo (2).png" alt="">
+            </a>
+            <ul class="main-nav">
+              <li class="nav-item active">
+              <a class="nav-link active" href="#">Simulator</a>
+              </li>
+              <li class="nav-item">
+              <a id = "blocklyhtml" class="nav-link" onclick="redirect()" href="#">Blockly Workspace</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  onclick="redirectDemo()" href="#">Demo</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" onclick="redirectInfo()" href="#">More Info</a>
+                </li>
+              
+            </ul>
+            
+            </div>
+          </div>
+        </header>
 </html>
-<body style="text-align: center;">
-  <h1>
-    Lego Mindstorm Simulation
-  </h1>
+<body>
+
+    
+  <section id="loading-screen">
+    <h2>Lego Mindstorm Simulation is Loading...</h2>
+          <div id="loader"> </div>
+        
+        </section>
+
   <div id="Ultrasonic" class="boxed">
     Ultrasonic Sensor
   </div>
@@ -32,9 +75,50 @@
   <div id="Gyro" class="boxed">
     Gyro Sensor
   </div>
-  <div id="function" class="boxed2">
-    function{ }
+  
+  <iframe id="blockly"  class="blockly" src="/blockly-master/demos/codelab/myapp/index.html" ></iframe>
+
+    <div class="container">
+    <a  id= "change" class="btn btn-4" onclick="viewHideSensorResults()" >Hide Sensor Results</a> 
+    <a  id = "start" class="btn btn-1">    Start    </a>
+    <a id ="pause"  class="btn btn-2">    Pause    </a>
+    <a id = "reset"  class="btn btn-3">    Reset    </a> 
   </div>
+  <script type="text/javascript" > 
+  var hidden = false;
+  function redirectDemo(){
+    location.replace("/LegoMinstormSimulation/demo.html")
+  }
+  function redirectInfo(){
+    location.replace("/LegoMinstormSimulation/moreInfo.html")
+  }
+  function redirect() {
+   
+  location.replace("/blockly-master/demos/codelab/myapp/index.html")
+}
+
+  function viewHideSensorResults(){
+
+    hidden= !hidden;
+
+    if (hidden == true){
+      document.getElementById('blockly').setAttribute("style","width:643px ;left:0px;");
+      document.getElementById('change').innerHTML = 'View Sensor Results';
+      // document.getElementById('blockly').setAttribute("style","left:0px");
+      console.log("true");
+  
+
+    }else {
+      document.getElementById('blockly').setAttribute("style","width:465px, left:177px");
+      document.getElementById('change').innerHTML = 'Hide Sensor Results';
+      // document.getElementById('blockly').setAttribute("style","left:377px");
+      console.log("false");
+    }
+
+  }
+
+
+  </script>
 
     <script>
       // This is necessary to work. DON'T REMOVE
@@ -59,9 +143,12 @@
 
     <script type="text/javascript" src="/blockly-master/demos/codelab/myapp/scripts/functions.js"></script>
     <script type="text/javascript" src="simulation.js"></script>
+    <script type="text/javascript" src="http://chir.ag/projects/ntc/ntc.js"></script>
+  
     <canvas id="canvas">
       <script type="text/javascript" src="plane.js"></script>
     </canvas>
 
   </body>
+  
 </html>
