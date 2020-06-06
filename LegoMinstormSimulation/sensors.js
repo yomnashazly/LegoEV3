@@ -56,7 +56,7 @@ var value = new Array( group.children.length );
 		
 
 		var result = intersect( fig1, fig2 );
-		console.log( result[ 0 ] );
+		// console.log( result[ 0 ] );
 
 
 		//	var isInside = pointIsInPoly( child.position, triangleGeometry );
@@ -209,14 +209,14 @@ function ultrasonicSensorFunction() {
 
 		];
 
-		console.log( triangleGeometry.vertices[ 0 ].x, triangleGeometry.vertices[ 0 ].z );
+		// console.log( triangleGeometry.vertices[ 0 ].x, triangleGeometry.vertices[ 0 ].z );
 
-		console.log( triangleGeometry.vertices[ 1 ].x, triangleGeometry.vertices[ 1 ].z );
+		// console.log( triangleGeometry.vertices[ 1 ].x, triangleGeometry.vertices[ 1 ].z );
 
-		console.log( triangleGeometry.vertices[ 2 ].x, triangleGeometry.vertices[ 2 ].z );
+		// console.log( triangleGeometry.vertices[ 2 ].x, triangleGeometry.vertices[ 2 ].z );
 
 		var result = intersect( fig1, fig2 );
-		console.log( result[ 0 ] );
+		// console.log( result[ 0 ] );
 
 
 		//	var isInside = pointIsInPoly( child.position, triangleGeometry );
@@ -304,14 +304,14 @@ function infraredSensorProximityFunction() {
 
 		];
 
-		console.log( triangleGeometry.vertices[ 0 ].x, triangleGeometry.vertices[ 0 ].z );
+		// console.log( triangleGeometry.vertices[ 0 ].x, triangleGeometry.vertices[ 0 ].z );
 
-		console.log( triangleGeometry.vertices[ 1 ].x, triangleGeometry.vertices[ 1 ].z );
+		// console.log( triangleGeometry.vertices[ 1 ].x, triangleGeometry.vertices[ 1 ].z );
 
-		console.log( triangleGeometry.vertices[ 2 ].x, triangleGeometry.vertices[ 2 ].z );
+		// console.log( triangleGeometry.vertices[ 2 ].x, triangleGeometry.vertices[ 2 ].z );
 
 		var result = intersect( fig1, fig2 );
-		console.log( result[ 0 ] );
+		// console.log( result[ 0 ] );
 
 
 		//	var isInside = pointIsInPoly( child.position, triangleGeometry );
@@ -369,9 +369,20 @@ function onDocumentMouseMove( event ) {
 
 }
 function colourSensorFunctionImage() {
-	camera.position.x = body.position.x;
-		camera.position.z = body.position.z;
-		camera.position.y = 50;
+	colourImage = true;
+	// // camera.lookAt( new THREE.Vector3( 0, -1,0) );
+	// camera.position.x = body.position.x;
+	// 	camera.position.z = body.position.z;
+	// 	camera.position.y = 50;
+		// renderer.setSize(
+		// 	width,
+		// 	height );
+
+		// console.log( camera.position.x , body.position.x);
+		// console.log( camera.position.z , body.position.z);
+
+		// console.log(camera.position.y);
+		
 
 	var read = new Float32Array( 4 );
 	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
@@ -382,19 +393,21 @@ function colourSensorFunctionImage() {
 	console.log(
 		'r:' +
       read[ 0 ].toFixed() +
-      'g:' +
+      ' g:' +
       read[ 1 ].toFixed() +
-      'b:' +
+      ' b:' +
       read[ 2 ].toFixed(),
 	);
 
 	document.getElementById( 'Colour' ).innerHTML =
     'r:' +
-    read[ 0 ].toFixed() +
+    read[ 0 ].toFixed(2)+
     'g:' +
-    read[ 1 ].toFixed() +
+    read[ 1 ].toFixed(2) +
     'b:' +
-    read[ 2 ].toFixed();
+	read[ 2 ].toFixed(2);
+	
+	// colourImage = false;
 
 }
 
@@ -416,6 +429,9 @@ function toScreenPosition( obj, camera ) {
 
 	pixelX = vector.x + 75;
 	pixelY = vector.y + 300;
+
+	// pixelX = vector.x ;
+	// pixelY = vector.y ;
 
 }
 

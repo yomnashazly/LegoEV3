@@ -35,9 +35,9 @@ function init() {
 
 	triangleGeometry = new THREE.Geometry();
 	var z = Math.tan( ( 30 * Math.PI ) / 180 ) * 255;
-	triangleGeometry.vertices.push( new THREE.Vector3( 0.0, 0, 0.0 ) );
-	triangleGeometry.vertices.push( new THREE.Vector3( - 255.0,0 , - z ) );
-	triangleGeometry.vertices.push( new THREE.Vector3( - 255.0, 0, z ) );
+	triangleGeometry.vertices.push( new THREE.Vector3( 0.0, -5, 0.0 ) );
+	triangleGeometry.vertices.push( new THREE.Vector3( - 255.0,-5 , - z ) );
+	triangleGeometry.vertices.push( new THREE.Vector3( - 255.0, -5, z ) );
 	triangleGeometry.faces.push( new THREE.Face3( 0, 1, 2 ) );
 
 	var triangleMaterial = new THREE.MeshBasicMaterial( {
@@ -51,9 +51,9 @@ function init() {
 
 	triangleGeometry2 = new THREE.Geometry();
 	var z = Math.tan( ( 5 * Math.PI ) / 180 ) * 70;
-	triangleGeometry2.vertices.push( new THREE.Vector3( 0.0, 0, 0.0 ) );
-	triangleGeometry2.vertices.push( new THREE.Vector3( - 70.0, 0, - z ) );
-	triangleGeometry2.vertices.push( new THREE.Vector3( - 70.0, 0, z ) );
+	triangleGeometry2.vertices.push( new THREE.Vector3( 0.0, -5, 0.0 ) );
+	triangleGeometry2.vertices.push( new THREE.Vector3( - 70.0, -5, - z ) );
+	triangleGeometry2.vertices.push( new THREE.Vector3( - 70.0, -5, z ) );
 	triangleGeometry2.faces.push( new THREE.Face3( 0, 1, 2 ) );
 
 	var triangleMaterial = new THREE.MeshBasicMaterial( {
@@ -67,9 +67,9 @@ function init() {
 
 	triangleGeometry3 = new THREE.Geometry();
 	var z = Math.tan( ( 25 * Math.PI ) / 180 ) * 200;
-	triangleGeometry3.vertices.push( new THREE.Vector3( 0.0, 0.0, 0.0 ) );
-	triangleGeometry3.vertices.push( new THREE.Vector3( - 200.0, 0.0, - z ) );
-	triangleGeometry3.vertices.push( new THREE.Vector3( - 200.0, 0.0, z ) );
+	triangleGeometry3.vertices.push( new THREE.Vector3( 0.0, -5, 0.0 ) );
+	triangleGeometry3.vertices.push( new THREE.Vector3( - 200.0, -5, - z ) );
+	triangleGeometry3.vertices.push( new THREE.Vector3( - 200.0, -5, z ) );
 	triangleGeometry3.faces.push( new THREE.Face3( 0, 1, 2 ) );
 
 	var triangleMaterial = new THREE.MeshBasicMaterial( {
@@ -83,9 +83,9 @@ function init() {
 
 	triangleGeometry4 = new THREE.Geometry();
 	var z = Math.tan( ( 25 * Math.PI ) / 180 ) * 5;
-	triangleGeometry4.vertices.push( new THREE.Vector3( 0.0, 0.0, 0.0 ) );
-	triangleGeometry4.vertices.push( new THREE.Vector3( - 5.0, 0.0, - z ) );
-	triangleGeometry4.vertices.push( new THREE.Vector3( - 5.0, 0.0, z ) );
+	triangleGeometry4.vertices.push( new THREE.Vector3( 0.0, -5, 0.0 ) );
+	triangleGeometry4.vertices.push( new THREE.Vector3( - 5.0, -5, - z ) );
+	triangleGeometry4.vertices.push( new THREE.Vector3( - 5.0, -5, z ) );
 	triangleGeometry4.faces.push( new THREE.Face3( 0, 1, 2 ) );
 
 	var triangleMaterial = new THREE.MeshBasicMaterial( {
@@ -172,6 +172,8 @@ texture.repeat.set( 4, 4 );
 	  window.innerWidth - window.innerWidth / 2.29,
 	  window.innerHeight - window.innerHeight / 8);
 	document.body.appendChild( renderer.domElement );
+
+
 	//THREE.WebGLRenderer.compile(scene, camera);
 	//document.addEventListener("mousedown", onDocumentMouseDown, false);
 	var loader = new THREE.TextureLoader();
@@ -415,7 +417,7 @@ function displayRobotSim() {
 function onClick() {
 	event.preventDefault();
 
-	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1 ;
 	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 
 	raycaster.setFromCamera( mouse, camera );
@@ -424,7 +426,7 @@ function onClick() {
 
 	if ( intersects.length > 0 ) {
 		if (
-			intersects[ 0 ].point.x <= xMax &&
+			intersects[ 0 ].point.x <= xMax  &&
       intersects[ 0 ].point.x >= xMin &&
       intersects[ 0 ].point.y <= yMax &&
       intersects[ 0 ].point.y >= yMin &&
@@ -464,7 +466,7 @@ function onClick() {
 						}
 					}
 				}
-				console.log( "Thing was not saved to the database." );
+				
 			}
 		} else {
 			console.log(
@@ -514,6 +516,11 @@ function animate() {
 		cube2.position.z = head.z;
 
 		if ( itn == 1 ) {
+
+
+
+// console.log(window.innerWidth*1, window.innerHeight*1);
+
 			triangleGeometry.translate( cube2.position.x, 0, cube2.position.z );
 			triangleGeometry2.translate( cube2.position.x, 0, cube2.position.z );
 			triangleGeometry3.translate( cube2.position.x, 0, cube2.position.z );
@@ -525,20 +532,23 @@ function animate() {
 			triangle.c.x += cube2.position.x;
 			triangle.c.z += cube2.position.z;
 
-			console.log(triangle.a );
-		console.log(triangle.b );
-		console.log(triangle.c);
+		//console.log(triangle.a );
+		// console.log(triang//le.b );
+		// console.log(triangle.c);
 
-		console.log(triangleGeometry.vertices[0]);
-		console.log(triangleGeometry.vertices[1]);
-		console.log(triangleGeometry.vertices[2]);
-
+		// console.log(triangleGeometry.vertices[0]);
+		// console.log(triangleGeometry.vertices[1]);
+		// console.log(triangleGeometry.vertices[2]);
 
 		}
 		itn += 1;
+	
+
+		camera.lookAt( new THREE.Vector3( body.x, body.y, body.z ) );
+
 
 		simulation();
-		camera.lookAt( new THREE.Vector3( body.x, body.y, body.z ) );
+	
 
 		
 	}
@@ -546,37 +556,37 @@ function animate() {
 	 
 
 	// Keyboard movement inputs6
-	if ( keyboard[ 87 ] ) {
-		// W key
-		camera.position.x += Math.sin( camera.rotation.y ) * 4;
-		camera.position.z += - Math.cos( camera.rotation.y ) * 4;
-	}
-	if ( keyboard[ 83 ] ) {
-		// S key
-		camera.position.x -= Math.sin( camera.rotation.y ) * 4;
-		camera.position.z -= - Math.cos( camera.rotation.y ) * 4;
-	}
-	if ( keyboard[ 65 ] ) {
-		// A key
-		// Redirect motion by 90 degrees
-		camera.position.x -= Math.sin( camera.rotation.y + Math.PI / 2 ) * 4;
-		camera.position.z -= - Math.cos( camera.rotation.y + Math.PI / 2 ) * 4;
-	}
-	if ( keyboard[ 68 ] ) {
-		// D key
-		camera.position.x -= Math.sin( camera.rotation.y - Math.PI / 2 ) * 4;
-		camera.position.z -= - Math.cos( camera.rotation.y - Math.PI / 2 ) * 4;
-	}
+	// if ( keyboard[ 87 ] ) {
+	// 	// W key
+	// 	camera.position.x += Math.sin( camera.rotation.y ) * 4;
+	// 	camera.position.z += - Math.cos( camera.rotation.y ) * 4;
+	// }
+	// if ( keyboard[ 83 ] ) {
+	// 	// S key
+	// 	camera.position.x -= Math.sin( camera.rotation.y ) * 4;
+	// 	camera.position.z -= - Math.cos( camera.rotation.y ) * 4;
+	// }
+	// if ( keyboard[ 65 ] ) {
+	// 	// A key
+	// 	// Redirect motion by 90 degrees
+	// 	camera.position.x -= Math.sin( camera.rotation.y + Math.PI / 2 ) * 4;
+	// 	camera.position.z -= - Math.cos( camera.rotation.y + Math.PI / 2 ) * 4;
+	// }
+	// if ( keyboard[ 68 ] ) {
+	// 	// D key
+	// 	camera.position.x -= Math.sin( camera.rotation.y - Math.PI / 2 ) * 4;
+	// 	camera.position.z -= - Math.cos( camera.rotation.y - Math.PI / 2 ) * 4;
+	// }
 
-	// Keyboard turn inputs
-	if ( keyboard[ 37 ] ) {
-		// left arrow key
-		camera.rotation.y -= player.turnSpeed;
-	}
-	if ( keyboard[ 39 ] ) {
-		// right arrow key
-		camera.rotation.y += player.turnSpeed;
-	}
+	// // Keyboard turn inputs
+	// if ( keyboard[ 37 ] ) {
+	// 	// left arrow key
+	// 	camera.rotation.y -= player.turnSpeed;
+	// }
+	// if ( keyboard[ 39 ] ) {
+	// 	// right arrow key
+	// 	camera.rotation.y += player.turnSpeed;
+	// }
 	// if (canvas != null) {
 	//   console.log("in");
 	//   document.getElementById("Colour").innerHTML = "in";
@@ -628,7 +638,7 @@ function animate() {
 
 function onDocumentMouseMove( event ) {
 	event.preventDefault();
-	mouseX = event.clientX;
+	mouseX = event.clientX + 500;
 	mouseY = event.clientY;
 	// mouseX = (event.clientX / window.innerWidth) * 2 - 1;
 	// mouseY = -(event.clientY / window.innerHeight) * 2 + 1;

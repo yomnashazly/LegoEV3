@@ -4,70 +4,140 @@ function moveRobot( hyp ) {
 	if (move == true){ 
 	if ( gyroSensorTotalAngleRotation == 0 ) {
 
-		wheel.position.x += - hyp;
-		wheel2.position.x += - hyp;
-		wheel3.position.x += - hyp;
-		wheel4.position.x += - hyp;
-		wheel5.position.x += - hyp;
-		wheel6.position.x += - hyp;
-		body.position.x += - hyp;
-		head.x += - hyp;
-		triangleGeometry.translate( - hyp, 0, 0 );
-		triangleGeometry2.translate( - hyp, 0, 0 );
-		triangleGeometry3.translate( - hyp, 0, 0 );
-		triangleGeometry4.translate( - hyp, 0, 0 );
+		// wheel.position.x += - hyp;
+		// wheel2.position.x += - hyp;
+		// wheel3.position.x += - hyp;
+		// wheel4.position.x += - hyp;
+		// wheel5.position.x += - hyp;
+		// wheel6.position.x += - hyp;
+		// body.position.x += - hyp;
+		// head.x += - hyp;
+		meshFloor.position.x +=hyp;
+		// triangleGeometry.translate( - hyp, 0, 0 );
+		// triangleGeometry2.translate( - hyp, 0, 0 );
+		// triangleGeometry3.translate( - hyp, 0, 0 );
+		// triangleGeometry4.translate( - hyp, 0, 0 );
+		for ( var i = 0; i < group.children.length; i ++ ) {
+
+
+			var child = group.children[ i ];
+			child.position.x+=hyp;
+		
+		}
+
+		mesh.position.x+=hyp;
+
+		
+			
+		// 			camera.position.x += - hyp;
+
+		
+
+		
 
 	}
 	if ( gyroSensorTotalAngleRotation == 90 ) {
 
-		wheel.position.z += - hyp;
-		wheel2.position.z += - hyp;
-		wheel3.position.z += - hyp;
-		wheel4.position.z += - hyp;
-		wheel5.position.z += - hyp;
-		wheel6.position.z += - hyp;
-		body.position.z += - hyp;
-		head.z += - hyp;
-		triangleGeometry.translate( 0, 0, - hyp );
-		triangleGeometry2.translate( 0, 0, - hyp );
-		triangleGeometry3.translate( 0, 0, - hyp );
-		triangleGeometry4.translate( 0, 0, - hyp );
+		// wheel.position.z += - hyp;
+		// wheel2.position.z += - hyp;
+		// wheel3.position.z += - hyp;
+		// wheel4.position.z += - hyp;
+		// wheel5.position.z += - hyp;
+		// wheel6.position.z += - hyp;
+		// body.position.z += - hyp;
+		// head.z += - hyp;
+		// triangleGeometry.translate( 0, 0, - hyp );
+		// triangleGeometry2.translate( 0, 0, - hyp );
+		// triangleGeometry3.translate( 0, 0, - hyp );
+		// triangleGeometry4.translate( 0, 0, - hyp );
+
+		
+			
+		// 	camera.position.z += - hyp;
+		meshFloor.position.z +=hyp;
+
+		for ( var i = 0; i < group.children.length; i ++ ) {
+
+
+			var child = group.children[ i ];
+			child.position.z+=hyp;
+		
+		}
+
+		mesh.position.z+=hyp;
+	
 
 	}
 
 	if ( gyroSensorTotalAngleRotation == 180 ) {
 
-		wheel.position.x += hyp;
-		wheel2.position.x += hyp;
-		wheel3.position.x += hyp;
-		wheel4.position.x += hyp;
-		wheel5.position.x += hyp;
-		wheel6.position.x += hyp;
-		body.position.x += hyp;
-		head.x += hyp;
-		triangleGeometry.translate( hyp, 0, 0 );
-		triangleGeometry2.translate( hyp, 0, 0 );
-		triangleGeometry3.translate( hyp, 0, 0 );
-		triangleGeometry4.translate( hyp, 0, 0 );
+		// wheel.position.x += hyp;
+		// wheel2.position.x += hyp;
+		// wheel3.position.x += hyp;
+		// wheel4.position.x += hyp;
+		// wheel5.position.x += hyp;
+		// wheel6.position.x += hyp;
+		// body.position.x += hyp;
+		// head.x += hyp;
+		// triangleGeometry.translate( hyp, 0, 0 );
+		// triangleGeometry2.translate( hyp, 0, 0 );
+		// triangleGeometry3.translate( hyp, 0, 0 );
+		// triangleGeometry4.translate( hyp, 0, 0 );
+
+		
+			
+			
+		// 	camera.position.x += hyp;
+
+		meshFloor.position.x -=hyp;
+
+		for ( var i = 0; i < group.children.length; i ++ ) {
+
+
+			var child = group.children[ i ];
+			child.position.x-=hyp;
+		
+		}
+
+		mesh.position.x-=hyp;
+
+
+		
 
 	}
 
 	if ( gyroSensorTotalAngleRotation == 270 ) {
 
-		wheel.position.z += hyp;
-		wheel2.position.z += hyp;
-		wheel3.position.z += hyp;
-		wheel4.position.z += hyp;
-		wheel5.position.z += hyp;
-		wheel6.position.z += hyp;
-		body.position.z += hyp;
+		// wheel.position.z += hyp;
+		// wheel2.position.z += hyp;
+		// wheel3.position.z += hyp;
+		// wheel4.position.z += hyp;
+		// wheel5.position.z += hyp;
+		// wheel6.position.z += hyp;
+		// body.position.z += hyp;
 
-		head.z += hyp;
-		triangleGeometry.translate( 0, 0, hyp );
-		triangleGeometry2.translate( 0, 0, hyp );
-		triangleGeometry3.translate( 0, 0, hyp );
-		triangleGeometry4.translate( 0, 0, hyp );
+		// head.z += hyp;
+		// triangleGeometry.translate( 0, 0, hyp );
+		// triangleGeometry2.translate( 0, 0, hyp );
+		// triangleGeometry3.translate( 0, 0, hyp );
+		// triangleGeometry4.translate( 0, 0, hyp );
+		
+			
+		
+		// 	camera.position.z += hyp;
 
+			meshFloor.position.z -=hyp;
+
+			for ( var i = 0; i < group.children.length; i ++ ) {
+
+
+				var child = group.children[ i ];
+				child.position.z-=hyp;
+			
+			}
+	
+			mesh.position.z-=hyp;
+		
 	}
 
 	if ( gyroSensorTotalAngleRotation < 90 && gyroSensorTotalAngleRotation != 0 ) {
@@ -87,28 +157,54 @@ function moveRobot( hyp ) {
 		// //console.log (body.position.x, body.position.z);
 
 		// //console.log (adj, opp);
-		wheel.position.z += opp;
-		wheel2.position.z += opp;
-		wheel3.position.z += opp;
-		wheel4.position.z += opp;
-		wheel5.position.z += opp;
-		wheel6.position.z += opp;
-		body.position.z += opp;
-		head.z += opp;
+		// wheel.position.z += opp;
+		// wheel2.position.z += opp;
+		// wheel3.position.z += opp;
+		// wheel4.position.z += opp;
+		// wheel5.position.z += opp;
+		// wheel6.position.z += opp;
+		// body.position.z += opp;
+		// head.z += opp;
 
-		wheel.position.x -= adj;
-		wheel2.position.x -= adj;
-		wheel3.position.x -= adj;
-		wheel4.position.x -= adj;
-		wheel5.position.x -= adj;
-		wheel6.position.x -= adj;
-		body.position.x -= adj;
-		head.x -= adj;
+		// wheel.position.x -= adj;
+		// wheel2.position.x -= adj;
+		// wheel3.position.x -= adj;
+		// wheel4.position.x -= adj;
+		// wheel5.position.x -= adj;
+		// wheel6.position.x -= adj;
+		// body.position.x -= adj;
+		// head.x -= adj;
 
-		triangleGeometry.translate( - adj, 0, opp );
-		triangleGeometry2.translate( - adj, 0, opp );
-		triangleGeometry3.translate( - adj, 0, opp );
-		triangleGeometry4.translate( - adj, 0, opp );
+	
+			
+			
+		// 			camera.position.x -= adj;
+		// 			camera.position.z += opp;
+
+
+
+		// triangleGeometry.translate( - adj, 0, opp );
+		// triangleGeometry2.translate( - adj, 0, opp );
+		// triangleGeometry3.translate( - adj, 0, opp );
+		// triangleGeometry4.translate( - adj, 0, opp );
+
+
+		meshFloor.position.z -=opp;
+		meshFloor.position.x +=adj;
+
+		for ( var i = 0; i < group.children.length; i ++ ) {
+
+
+			var child = group.children[ i ];
+			child.position.z-=opp;
+			child.position.x+=adj;
+		
+		}
+
+		mesh.position.z-=opp;
+			mesh.position.x+=adj;
+
+		
 
 	}
 
@@ -120,26 +216,49 @@ function moveRobot( hyp ) {
 		// //console.log (body.position.x, body.position.z);
 
 		// //console.log (adj, opp);
-		wheel.position.z += opp;
-		wheel2.position.z += opp;
-		wheel3.position.z += opp;
-		wheel4.position.z += opp;
-		wheel5.position.z += opp;
-		wheel6.position.z += opp;
-		body.position.z += opp;
-		head.z += opp;
+		// wheel.position.z += opp;
+		// wheel2.position.z += opp;
+		// wheel3.position.z += opp;
+		// wheel4.position.z += opp;
+		// wheel5.position.z += opp;
+		// wheel6.position.z += opp;
+		// body.position.z += opp;
+		// head.z += opp;
 
-		wheel.position.x += adj;
-		wheel2.position.x += adj;
-		wheel3.position.x += adj;
-		wheel4.position.x += adj;
-		wheel5.position.x += adj;
-		wheel6.position.x += adj;
-		head.x += adj;
-		triangleGeometry.translate( adj, 0, opp );
-		triangleGeometry2.translate( adj, 0, opp );
-		triangleGeometry3.translate( adj, 0, opp );
-		triangleGeometry4.translate( adj, 0, opp );
+		// wheel.position.x += adj;
+		// wheel2.position.x += adj;
+		// wheel3.position.x += adj;
+		// wheel4.position.x += adj;
+		// wheel5.position.x += adj;
+		// wheel6.position.x += adj;
+		// body.position.x += adj;
+		// head.x += adj;
+		// triangleGeometry.translate( adj, 0, opp );
+		// triangleGeometry2.translate( adj, 0, opp );
+		// triangleGeometry3.translate( adj, 0, opp );
+		// triangleGeometry4.translate( adj, 0, opp );
+		
+		
+		// 	camera.position.x += adj;
+		// 	camera.position.z += opp;
+
+		meshFloor.position.z -=opp;
+		meshFloor.position.x -=adj;
+
+		for ( var i = 0; i < group.children.length; i ++ ) {
+
+
+			var child = group.children[ i ];
+			child.position.z-=opp;
+			child.position.x-=adj;
+		
+		}
+
+		mesh.position.z-=opp;
+			mesh.position.x-=adj;
+
+
+
 
 	}
 
@@ -152,28 +271,51 @@ function moveRobot( hyp ) {
 		var adj = hyp * Math.cos( ang2 );
 		var opp = hyp * Math.sin( ang2 );
 
-		wheel.position.x += opp;
-		wheel2.position.x += opp;
-		wheel3.position.x += opp;
-		wheel4.position.x += opp;
-		wheel5.position.x += opp;
-		wheel6.position.x += opp;
-		body.position.x += opp;
-		head.x += opp;
+		// wheel.position.x += opp;
+		// wheel2.position.x += opp;
+		// wheel3.position.x += opp;
+		// wheel4.position.x += opp;
+		// wheel5.position.x += opp;
+		// wheel6.position.x += opp;
+		// body.position.x += opp;
+		// head.x += opp;
 
-		wheel.position.z += adj;
-		wheel2.position.z += adj;
-		wheel3.position.z += adj;
-		wheel4.position.z += adj;
-		wheel5.position.z += adj;
-		wheel6.position.z += adj;
-		body.position.z += adj;
-		head.z += adj;
+		// wheel.position.z += adj;
+		// wheel2.position.z += adj;
+		// wheel3.position.z += adj;
+		// wheel4.position.z += adj;
+		// wheel5.position.z += adj;
+		// wheel6.position.z += adj;
+		// body.position.z += adj;
+		// head.z += adj;
+		
+			
+			
 
-		triangleGeometry.translate( opp, 0, adj );
-		triangleGeometry2.translate( opp, 0, adj );
-		triangleGeometry3.translate( opp, 0, adj );
-		triangleGeometry4.translate( opp, 0, adj );
+		// 	camera.position.x += opp;
+		// 	camera.position.z += adj;
+
+
+		// triangleGeometry.translate( opp, 0, adj );
+		// triangleGeometry2.translate( opp, 0, adj );
+		// triangleGeometry3.translate( opp, 0, adj );
+		// triangleGeometry4.translate( opp, 0, adj );
+
+		meshFloor.position.x -=opp;
+		meshFloor.position.z -=adj;
+
+		for ( var i = 0; i < group.children.length; i ++ ) {
+
+
+			var child = group.children[ i ];
+			child.position.z-=adj;
+			child.position.x-=opp;
+		
+		}
+
+		mesh.position.z-=adj;
+			mesh.position.x-=opp;
+
 
 	}
 
@@ -186,37 +328,63 @@ function moveRobot( hyp ) {
 		var adj = hyp * Math.cos( ang2 );
 		var opp = hyp * Math.sin( ang2 );
 
-		wheel.position.z += opp;
-		wheel2.position.z += opp;
-		wheel3.position.z += opp;
-		wheel4.position.z += opp;
-		wheel5.position.z += opp;
-		wheel6.position.z += opp;
-		body.position.z += opp;
-		head.z += opp;
+		// wheel.position.z += opp;
+		// wheel2.position.z += opp;
+		// wheel3.position.z += opp;
+		// wheel4.position.z += opp;
+		// wheel5.position.z += opp;
+		// wheel6.position.z += opp;
+		// body.position.z += opp;
+		// head.z += opp;
 
-		wheel.position.x -= adj;
-		wheel2.position.x -= adj;
-		wheel3.position.x -= adj;
-		wheel4.position.x -= adj;
-		wheel5.position.x -= adj;
-		wheel6.position.x -= adj;
-		body.position.x -= adj;
-		head.x -= adj;
+		// wheel.position.x -= adj;
+		// wheel2.position.x -= adj;
+		// wheel3.position.x -= adj;
+		// wheel4.position.x -= adj;
+		// wheel5.position.x -= adj;
+		// wheel6.position.x -= adj;
+		// body.position.x -= adj;
+		// head.x -= adj;
 
-		triangleGeometry.translate( - adj, 0, opp );
-		triangleGeometry2.translate( - adj, 0, opp );
-		triangleGeometry3.translate( - adj, 0, opp );
-		triangleGeometry4.translate( - adj, 0, opp );
+		// triangleGeometry.translate( - adj, 0, opp );
+		// triangleGeometry2.translate( - adj, 0, opp );
+		// triangleGeometry3.translate( - adj, 0, opp );
+		// triangleGeometry4.translate( - adj, 0, opp );
+	
+			
+			
+			
+		// camera.position.x -= adj;
+		// camera.position.z += opp;
+
+		meshFloor.position.z -=opp;
+		meshFloor.position.x +=adj;
+
+		for ( var i = 0; i < group.children.length; i ++ ) {
+
+
+			var child = group.children[ i ];
+			child.position.z-=opp;
+			child.position.x+=adj;
+		
+		}
+
+		mesh.position.z-=opp;
+			mesh.position.x+=adj;
+
+
+
 
 	}
+
+if (rotate==false){
 
 	wheel.rotateY( ( hyp * 0.02 ) / 0.033 );
 	wheel2.rotateY( ( hyp * 0.02 ) / 0.033 );
 	wheel3.rotateY( ( hyp * 0.02 ) / 0.033 );
 	wheel4.rotateY( ( hyp * 0.02 ) / 0.033 );
 	wheel5.rotateY( ( hyp * 0.02 ) / 0.033 );
-	wheel6.rotateY( ( hyp * 0.02 ) / 0.033 );
+	wheel6.rotateY( ( hyp * 0.02 ) / 0.033 );}
 	}
 }
 function stopMoving() {
@@ -224,9 +392,11 @@ function stopMoving() {
 	move = false;
 
 }
-function startMoving() {
+function startMoving(hyp) {
 
 	move = true;
+
+	moveRobot(hyp);
 	
 
 }
@@ -235,9 +405,10 @@ function stopRotate() {
 	rotate = false;
 
 }
-function startRotate() {
+function startRotate(ang) {
 
 	rotate = true;
+	rotateRobot(ang);
 
 }
 
@@ -499,6 +670,19 @@ function rotateRobot( ang ) {
 	// //console.log (z1);
 	triangleGeometry4.vertices[ 2 ].x = x1 + robotX;
 	triangleGeometry4.vertices[ 2 ].z = z1 + robotZ;
+
+
+	var x = camera.position.x - robotX;
+	// //console.log (x);
+
+	var z = camera.position.z - robotZ;
+	// //console.log (z);
+	var x1 = x * Math.cos( ang ) - z * Math.sin( ang );
+	// //console.log (x1);
+	var z1 = z * Math.cos( ang ) + x * Math.sin( ang );
+	// //console.log (z1);
+	camera.position.x = x1 + robotX;
+	camera.position.z = z1 + robotZ;
 	////console.log (triangleGeometry.vertices[2].x, triangleGeometry.vertices[2].z);
 	// triangleGeometry.vertices[2].set(
 	//   triangleGeometry.vertices[2].x,
@@ -528,7 +712,16 @@ function rotateRobot( ang ) {
 
 	}
 	body.rotateY( - ang );
-	camera.rotation.z -= ang;
+
+	// controls.reset();
+	// camera.rotation.y -=ang; 
+	// camera.updateProjectionMatrix();
+	// if (colourImage == true){
+
+	// camera.rotateZ(-ang);
+	// 	camera.rotation.z -= ang;
+
+	// }
 	}
 }
 

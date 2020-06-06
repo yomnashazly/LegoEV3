@@ -61,6 +61,10 @@ var ultrasonicSensorOn = true;
 var gyroSensorRateofRotation = 0;
 var gyroSensorTotalAngleRotation = 0;
 var gyroSensorOn = false;
+var colourImage = false;
+
+var width =  window.innerWidth;
+var height =  window.innerHeight;
 // localStorage.setItem("gyroSensorRateofRotation", gyroSensorRateofRotation);
 // localStorage.setItem(
 //   "gyroSensorTotalAngleRotation",

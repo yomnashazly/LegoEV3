@@ -21,6 +21,8 @@ function pause(){
 
 }
 function simulation() {
+
+	
 	document.getElementById("start").addEventListener("click", function(){
 		console.log("start");
 		start = true;
@@ -44,19 +46,27 @@ function simulation() {
 	if (start == true){
 		move = true;
 		rotate = true;
-		///	colourSensorFunction();
+			colourSensorFunction();
 	colourSensorFunctionImage();
-	//colourSensorAmbientFunction();
+	colourSensorAmbientFunction();
 	ultrasonicSensorFunction();
 	infraredSensorProximityFunction();
+	colourSensorFunctionImage();
 	touchSensorFunction();
 	gyroSensorFunction();
-	moveRobot(0.05);
-// 	 try{
-// 	 eval(localStorage.getItem("code"));
-//  }catch(e){
-// 	 alert(e);
-//  }
+	// if (gyroSensorTotalAngleRotation <300){
+	// 	rotateRobot(0.01);
+	// }else{
+		
+	// 	moveRobot(0.2);
+	// }
+	// rotateRobot(0.02);
+	// moveRobot(0.05);
+	 try{
+	 eval(localStorage.getItem("code"));
+ }catch(e){
+	 alert(e);
+ }
 		
 
 	}
