@@ -29,7 +29,7 @@ Blockly.Blocks['touch_sensor'] = {
               .appendField(new Blockly.FieldLabelSerializable("Color sensor detects"), "color_sensor")
               .appendField(new Blockly.FieldDropdown([["No color","no_color"],["White","white"],["Black","black"], ["Red","red"] ,["Brown","brown"],["Green","green"],["Yellow","yellow"],["Blue","blue"]]), "NAME");
           this.setOutput(true, null);
-          this.setColour(1);
+          this.setColour(100);
        this.setTooltip("");
        this.setHelpUrl("");
         }
@@ -49,7 +49,7 @@ Blockly.Blocks['touch_sensor'] = {
               this.appendDummyInput()
                   .appendField(new Blockly.FieldLabelSerializable("color that sensor detects"), "NAME");
               this.setOutput(true, null);
-              this.setColour(20);
+              this.setColour(100);
            this.setTooltip("");
            this.setHelpUrl("");
             }
@@ -57,7 +57,7 @@ Blockly.Blocks['touch_sensor'] = {
 
           Blockly.JavaScript['get_color'] = function(block) {
             // TODO: Assemble JavaScript into code variable.
-            var code = 'colourSensor';
+            var code = 'getColourSensor()';
             // TODO: Change ORDER_NONE to the correct strength.
             return [code, Blockly.JavaScript.ORDER_NONE];
           };
@@ -71,7 +71,7 @@ Blockly.Blocks['get_distance'] = {
         .appendField("distance that infrared sensor detects in ")
         .appendField(new Blockly.FieldDropdown([["cm","cm"], ["inches","inches"]]), "NAME");
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(200);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -119,10 +119,10 @@ Blockly.Blocks['is_distance_infrared'] = {
         .appendField("Distance of infrared")
         .appendField(new Blockly.FieldDropdown([["<","<"], [">",">"], ["=","="]]), "NAME")
         .appendField(new Blockly.FieldTextInput("15"), "distance")
-        .appendField(new Blockly.FieldDropdown([["cm","cm"], ["inches","inches"], ["option","OPTIONNAME"]]), "NAME")
+        .appendField(new Blockly.FieldDropdown([["cm","cm"], ["inches","inches"]]), "NAME")
         .appendField("?");
         this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(200);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -145,7 +145,7 @@ Blockly.Blocks['is_distance_ultrasonic'] = {
         .appendField("Distance of ultrasonic")
         .appendField(new Blockly.FieldDropdown([["<","<"], [">",">"], ["=","="]]), "NAME")
         .appendField(new Blockly.FieldTextInput("15"), "distance")
-        .appendField(new Blockly.FieldDropdown([["cm","cm"], ["inches","inches"], ["option","OPTIONNAME"]]), "NAME")
+        .appendField(new Blockly.FieldDropdown([["cm","cm"], ["inches","inches"]]), "NAME")
         .appendField("?");
         this.setOutput(true, null);
     this.setColour(230);

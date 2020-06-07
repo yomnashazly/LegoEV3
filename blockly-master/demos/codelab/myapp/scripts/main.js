@@ -44,7 +44,11 @@ document.getElementById("workspace_number").style.columnWidth= 90/number;
 
   function handlePlay(event) {
     console.log("in handlePlay function");
+    if(number!=undefined)
     loadWorkspace();
+    else{
+      swal("Could not open workspace", 'Please choose or create a workspace','error')
+     }
     Blockly.JavaScript.addReservedWords('code');
     var code = Blockly.JavaScript.workspaceToCode(Blockly.getMainWorkspace());
     code += 'MusicMaker.play();';
@@ -151,7 +155,7 @@ document.getElementById("workspace_number").style.columnWidth= 90/number;
     // document.getElementById("create").style.display = 'none';
     document.getElementById("create").style.visibility = 'hidden';
     document.getElementById('buttons').innerHTML = '<button  id= "JSbuttons" class="JSbuttons" onclick="showCode()">Show JavaScript</button><button id= "JSbuttons" class="JSbuttons" onclick="runCode()">Run JavaScript</button>';
-    document.getElementById('redirect-div').innerHTML = '<div class="container"><div class="center"><button id="myButton" class="redirect" >Simulate</button></div></div>';
+    document.getElementById('redirect-div').innerHTML = '    <a href="javascript:history.go(0)" class="back">&laquo; Home</a>    <div class="container"><div class="center"><button id="myButton" class="redirect" >Simulate</button></div></div>';
     document.getElementById('script').innerHTML = 'document.getElementById("myButton").onclick = function () {location.href = "../../../../LegoMinstormSimulation/indexX.html";};';
 
     console.log("in loadworkspace function", number);
@@ -224,7 +228,11 @@ document.getElementById("workspace_number").style.columnWidth= 90/number;
       console.log("numberrrrrrrrrr type:",typeof number)
       console.log("nuumberrr tany:",typeof String(number))
       // createEventsTable(size+1);
-      window.alert("created successfully !")
+      swal(
+        'Created successfully!',
+        'Go to workspace',
+        'success'
+      )
   });
 // enableBlocklyMode();
   }
@@ -237,13 +245,15 @@ document.getElementById("workspace_number").style.columnWidth= 90/number;
     console.log("in enableBlocklyMode function");
     document.body.setAttribute('mode', 'blockly');
     // currentButton = e.target;
+    if(number!=undefined)
     loadWorkspace();
+    else{
+      window.alert("please choose or create a workspace")
+    }
   }
 
-  document.querySelector('#edit').addEventListener('click', enableEditMode);
-  // document.querySelector('#done').addEventListener('click', enableMakerMode);
-  // document.querySelector('#save').addEventListener('click', handleSave);
-  // document.querySelector('#myTable').addEventListener('click', wsnumberisclicked);
+  document.querySelector('#workspace_number').addEventListener('click', enableEditMode);
+  document.querySelector('#create').addEventListener('click', enableEditMode);
   window.onload=function(){
     firebase.firestore().collection('workspaces').orderBy("number", "asc").get().then(async function (querySnapshot) {
       await querySnapshot.forEach(function (doc) {
