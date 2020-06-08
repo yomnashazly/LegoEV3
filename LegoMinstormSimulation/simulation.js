@@ -44,16 +44,30 @@ function simulation() {
 	  });
 
 	if (start == true){
-		move = true;
-		rotate = true;
+		
+
+		if (x==0){
+			startMoving();
+			startRotate();
+		}
+		x++;
 			colourSensorFunction();
 	colourSensorFunctionImage();
 	colourSensorAmbientFunction();
 	ultrasonicSensorFunction();
 	infraredSensorProximityFunction();
 	colourSensorFunctionImage();
-	touchSensorFunction();
+	//touchSensorFunction();
 	gyroSensorFunction();
+
+	 moveRobot(0.2);
+
+	// if (ultrasonicSensor==0){
+
+	// 	stopMoving();
+
+	// }
+	
 	// if (gyroSensorTotalAngleRotation <300){
 	// 	rotateRobot(0.01);
 	// }else{
@@ -62,11 +76,11 @@ function simulation() {
 	// }
 	// rotateRobot(0.02);
 	// moveRobot(0.05);
-	 try{
-	 eval(localStorage.getItem("code"));
- }catch(e){
-	 alert(e);
- }
+// 	 try{
+// 	 eval(localStorage.getItem("code"));
+//  }catch(e){
+// 	 alert(e);
+//  }
 		
 
 	}

@@ -2,12 +2,37 @@
 
 function touchSensorFunction() {
 
-	// if (touchSensorOn == false) {
-	//   //touchSensorOn = false;
-	//   document.getElementById("sensorValue").value = "Touch Sensor = Off";
-	// } else {
+
+
+	if ( confirm( "Do you want to Bump Sensor?" ) ) {
+		touchSensor = "bumped";
+	
+		// console.log("Thing was saved to the database.");
+	} else {
+		// Do nothing!
+		if ( touchSensor == "released" ) {
+			console.log( "dakhal" );
+			touchSensor = "pressed";
+			console.log( touchSensor );
+
+		} else {
+	
+				if ( touchSensor == "pressed" ) {
+					touchSensor = "released";
+
+				} else {
+					if ( touchSensor == "bumped" ) {
+						touchSensor = "released";
+					
+					}
+				}
+			}
+		}
+		
+	
+
 	document.getElementById( 'Touch' ).innerHTML =
-    'Touch Sensor = On, Value = ' + touchSensor;
+    'Touch Sensor = ' + touchSensor;
 	// }
 
 }
@@ -76,10 +101,10 @@ colourSensor = result;
  colourSensor = specific_name;
 
 
-
+colourSensor = colourSensor.toLowerCase();
 
 			document.getElementById( 'Colour' ).innerHTML =
-        'Colour Sensor = On, Mode = Colour, Value = ' + colourSensor;
+        'Colour Sensor Value = ' + colourSensor.toLowerCase();
 
 		} else {
 
@@ -103,7 +128,7 @@ colourSensor = result;
 
 		colourSensor = "No Colour";
 		document.getElementById( 'Colour' ).innerHTML =
-    'Colour Sensor = On, Mode = Colour, Value = ' + colourSensor;
+    'Colour Sensor Value = ' + colourSensor;
 
 	}
 
@@ -145,8 +170,8 @@ function colourSensorAmbientFunction() {
 	//   }
 	// }
 colourSensorAmbient =    light.intensity * 100;
-	document.getElementById( 'Colour' ).innerHTML =
-    'Colour Sensor = On, Mode = Ambient Light Intensity, Value = ' +colourSensorAmbient;
+	document.getElementById( 'ColourA' ).innerHTML =
+    'Ambient Light Intensity, Value = ' +colourSensorAmbient;
  
 
 }
@@ -161,9 +186,9 @@ function gyroSensorFunction() {
 	// } else {
 	//   gyroSensorOn = true;
 	document.getElementById( 'Gyro' ).innerHTML =
-    ' Gyro Sensor = On, Rate of Rotation:' +
+    ' Gyro Sensor, Rate of Rotation:' +
     gyroSensorRateofRotation +
-    'Total Angle:' +
+    'Angle:' +
     gyroSensorTotalAngleRotation;
 
 }
@@ -227,7 +252,7 @@ function ultrasonicSensorFunction() {
 			var changeZ = child.position.z - cube2.position.z;
 			ultrasonicSensor = Math.sqrt( changeX * changeX + changeZ * changeZ );
 			document.getElementById( 'Ultrasonic' ).innerHTML =
-        'Ultrasonic Sensor = On, value= ' + ultrasonicSensor + " " + i;
+        'Ultrasonic Sensor Value= ' + ultrasonicSensor 
 
 			value[ i ] = true;
 
@@ -254,7 +279,7 @@ function ultrasonicSensorFunction() {
 
 		ultrasonicSensor = 0;
 		document.getElementById( 'Ultrasonic' ).innerHTML =
-    'Ultrasonic Sensor = On,  Value = ' + ultrasonicSensor;
+    'Ultrasonic Sensor Value = ' + ultrasonicSensor;
 
 	}
 
@@ -322,7 +347,7 @@ function infraredSensorProximityFunction() {
 			var changeZ = child.position.z - cube2.position.z;
 			infraredSensor = Math.sqrt( changeX * changeX + changeZ * changeZ ) / 70 * 100;
 			document.getElementById( 'Infrared' ).innerHTML =
-        'Infrared Sensor = On, value= ' + infraredSensor + " " + i;
+        'Infrared Sensor Value= ' + infraredSensor 
 
 			value[ i ] = true;
 
@@ -349,7 +374,7 @@ function infraredSensorProximityFunction() {
 
 		infraredSensor = 0;
 		document.getElementById( 'Infrared' ).innerHTML =
-        'Infrared Sensor = On, value= ' + infraredSensor + " " + i;
+        'Infrared Sensor Value= ' + infraredSensor ;
 
 	}
 
@@ -385,7 +410,7 @@ function colourSensorFunctionImage() {
 		
 
 	var read = new Float32Array( 4 );
-	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+
 
 	toScreenPosition( cube2, camera );
 	renderer.readRenderTargetPixels( rtTexture, pixelX, pixelY, 1, 1, read );
@@ -399,13 +424,13 @@ function colourSensorFunctionImage() {
       read[ 2 ].toFixed(),
 	);
 
-	document.getElementById( 'Colour' ).innerHTML =
-    'r:' +
+    colourSensorImage = 'r:' +
     read[ 0 ].toFixed(2)+
     'g:' +
     read[ 1 ].toFixed(2) +
     'b:' +
 	read[ 2 ].toFixed(2);
+	document.getElementById( 'ColourI' ).innerHTML = "Colour Sensor Image = "+ colourSensorImage;
 	
 	// colourImage = false;
 
@@ -452,4 +477,10 @@ function getTouchSensor(){
 }
 function getColourSensor(){
 	return colourSensor;
+}
+function getColourSensorAmbient(){
+	return colourSensorAmbient;
+}
+function getColourSensorImage(){
+	return colourSensorImage;
 }

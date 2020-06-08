@@ -29,11 +29,12 @@
           <div class="c-container">
             <div class="nav-items">
             <a href="">
-            <img class="site-logo" src="logo (2).png" alt="">
+            <img class="site-logo" src="logo (2).png" alt="" </img>
             </a>
             <ul class="main-nav">
               <li class="nav-item active">
-              <a class="nav-link active" href="#">Simulator</a>
+              <a class="nav-link active" href="#">Simulator  
+                 </a>
               </li>
               <li class="nav-item">
               <a id = "blocklyhtml" class="nav-link" onclick="redirect()" href="#">Blockly Workspace</a>
@@ -69,12 +70,28 @@
   <div id="Colour" class="boxed">
     Colour Sensor
   </div>
-  <div id="Touch" class="boxed">
-    Touch Sensor
+  <div id="ColourI" class="boxed">
+    Colour Sensor Image
   </div>
+
   <div id="Gyro" class="boxed">
     Gyro Sensor
   </div>
+  <div>
+    <button class= "boxed3" type="button" onclick="changeIntoNight()" >Night</button>
+  </div>
+  <div>
+    <button class= "boxed4" type="button" onclick="changeIntoMorning()" >Morning</button>
+  </div>
+  <div id="Touch" class="boxed">
+    Touch Sensor
+  </div>
+  <div>
+  <button class= "boxed2" type="button" onclick="touchSensorFunction()" >Touch Sensor Button</button>
+</div>
+<div id="ColourA" class="boxed">
+  Colour Sensor Ambient
+</div>
   
   <iframe id="blockly"  class="blockly" src="/blockly-master/demos/codelab/myapp/index.html" ></iframe>
 
@@ -92,6 +109,11 @@
   <script type="text/javascript" > 
 
 
+
+if (window.innerWidth <1280){
+  document.getElementById('change').innerHTML = 'View Sensor ';
+
+}
 //document.getElementById('Ultrasonic').setAttribute("style","height:((100*window.innerHeight)/754)px ;width:((100*window.innerWidth)/1280)px; top:(2*window.innerHeight)/754px;bottom:(4*window.innerHeight)/754px");
 //document.getElementById('boxed').style.height=  "100*window.innerHeight)/754 px";
   var hidden = false;
@@ -112,15 +134,23 @@
 
     if (hidden == true){
       document.getElementById('blockly').setAttribute("style","width:42% ;left:0px;");
-      document.getElementById('change').innerHTML = 'View Sensor Results';
+
+      if (window.innerWidth >=1280){
+      document.getElementById('change').innerHTML = 'View Sensor Results';}
+else {
+  document.getElementById('change').innerHTML = 'View Sensor ';
+}
       // document.getElementById('blockly').setAttribute("style","left:0px");
       console.log("true");
   
 
     }else {
       document.getElementById('blockly').setAttribute("style","width:29.5%, left:11%");
-      document.getElementById('change').innerHTML = 'Hide Sensor Results';
-      // document.getElementById('blockly').setAttribute("style","left:377px");
+      if (window.innerWidth >=1280){
+      document.getElementById('change').innerHTML = 'Hide Sensor Results';}
+else {
+  document.getElementById('change').innerHTML = 'Hide Sensor ';
+}
       console.log("false");
     }
 

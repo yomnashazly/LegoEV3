@@ -39,7 +39,7 @@ var itn = 1;
 var group;
 var cube;
 var material;
-var touchSensor;
+var touchSensor = "released";
 var touchSensorOn = false;
 
 var raycaster, mouse;
@@ -47,6 +47,9 @@ var raycaster, mouse;
 // localStorage.setItem("touchSensorOn", touchSensorOn);
 var object;
 var colourSensor;
+var colourSensorAmbient;
+var colourSensorImage;
+
 var colourSensorOn = false;
 var colourSensorMode;
 // localStorage.setItem("colourSensor", colourSensor);
@@ -62,6 +65,7 @@ var gyroSensorRateofRotation = 0;
 var gyroSensorTotalAngleRotation = 0;
 var gyroSensorOn = false;
 var colourImage = false;
+var x = 0;
 
 var width =  window.innerWidth;
 var height =  window.innerHeight;
@@ -100,3 +104,5 @@ var canvas = document.getElementById( "canvas" );
 var storageRef;
 var intersectionPoint = new THREE.Vector3( );
 var triangle; 
+
+var i=0;

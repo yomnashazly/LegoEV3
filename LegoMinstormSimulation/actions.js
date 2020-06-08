@@ -392,11 +392,10 @@ function stopMoving() {
 	move = false;
 
 }
-function startMoving(hyp) {
+function startMoving() {
 
 	move = true;
 
-	moveRobot(hyp);
 	
 
 }
@@ -405,10 +404,10 @@ function stopRotate() {
 	rotate = false;
 
 }
-function startRotate(ang) {
+function startRotate() {
 
 	rotate = true;
-	rotateRobot(ang);
+	
 
 }
 

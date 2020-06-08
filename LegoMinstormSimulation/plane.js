@@ -19,13 +19,13 @@ function init() {
 
 	camera.position.set(- 30, 20, 30 );
 	const color = 0xffffff;
-	const intensity = 0.5;
+	const intensity = 0.7;
 	light = new THREE.AmbientLight( color, intensity );
-	var light2 = new THREE.AmbientLight( 0x404040 );
+//	var light2 = new THREE.AmbientLight( 0x404040 );
 	light.castShadow = true;
 
 	scene.add( light );
-	scene.add( light2 );
+//	scene.add( light2 );
 	clock = new THREE.Clock();
 	raycaster = new THREE.Raycaster();
 	mouse = new THREE.Vector2();
@@ -228,13 +228,14 @@ texture.repeat.set( 4, 4 );
 
 //	scene.add( triangle );
 	robot = "complexRobot";
-	var skyGeo = new THREE.SphereGeometry(5, 5, 5); 
+	var skyGeo = new THREE.SphereGeometry(1000, 25, 25); 
 	var loader  = new THREE.TextureLoader(),
 	texture = loader.load( "sky.jpg" );
 	var material = new THREE.MeshPhongMaterial({ 
         map: texture,
 });
 var sky = new THREE.Mesh(skyGeo, material);
+//sky.rotateZ(3);
     sky.material.side = THREE.BackSide;
     scene.add(sky);
 	displayRobotSim();
@@ -414,71 +415,6 @@ function displayRobotSim() {
 	}
 }
 
-function onClick() {
-	event.preventDefault();
-
-	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1 ;
-	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-
-	raycaster.setFromCamera( mouse, camera );
-
-	var intersects = raycaster.intersectObjects( scene.children, true );
-
-	if ( intersects.length > 0 ) {
-		if (
-			intersects[ 0 ].point.x <= xMax  &&
-      intersects[ 0 ].point.x >= xMin &&
-      intersects[ 0 ].point.y <= yMax &&
-      intersects[ 0 ].point.y >= yMin &&
-      intersects[ 0 ].point.z >= zMin &&
-      intersects[ 0 ].point.z <= zMax
-		) {
-			console.log( "Intersection:", intersects[ 0 ], intersects[ 0 ].point.x );
-			if ( confirm( "Do you want to Bump Sensor?" ) ) {
-				touchSensor = "bumped";
-				touchSensorFunction();
-				// console.log("Thing was saved to the database.");
-			} else {
-				// Do nothing!
-				if ( touchSensor == "released" ) {
-					console.log( "dakhal" );
-					touchSensor = "pressed";
-					console.log( touchSensor );
-
-					touchSensorFunction();
-				} else {
-					if ( touchSensor == undefined ) {
-						console.log( "dakhal1" );
-						touchSensor = "released";
-						console.log( touchSensor );
-
-						touchSensorFunction();
-					} else {
-						if ( touchSensor == "pressed" ) {
-							touchSensor = "released";
-
-							touchSensorFunction();
-						} else {
-							if ( touchSensor == "bumped" ) {
-								touchSensor = "released";
-								touchSensorFunction();
-							}
-						}
-					}
-				}
-				
-			}
-		} else {
-			console.log(
-				"no",
-				intersects[ 0 ].point.x,
-				intersects[ 0 ].point.y,
-				intersects[ 0 ].point.z
-			);
-		}
-	}
-}
-
 function animate() {
 	//debugger;
 	//ultrasonicSensorFunction();
@@ -492,7 +428,7 @@ function animate() {
 		robotZ = position.z;
 
 		//document.addEventListener("mousedown", onMouseDown, false);
-		renderer.domElement.addEventListener( "click", onClick, false );
+		// renderer.domElement.addEventListener( "click", onClick, false );
 
 		bbox = new THREE.Box3().setFromObject( body );
 		xMin = bbox.min.x;
@@ -506,6 +442,7 @@ function animate() {
 
 		if ( itn == 1 ) {
 			head = new THREE.Vector3( xMin, 5, ( zMax - zMin ) / 2 + zMin );
+			document.getElementById('blockly').contentWindow.location.reload();
 		}
 
 		// head.x = xMin;
@@ -675,6 +612,15 @@ function onTransitionEnd( event ) {
 
 	event.target.remove();
 	
+}
+
+function changeIntoNight(){
+light.intensity = 0.2;
+}
+
+function changeIntoMorning(){
+	light.intensity = 0.7;
+
 }
 window.addEventListener( "keydown", keyDown );
 window.addEventListener( "keyup", keyUp );
