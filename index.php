@@ -1,0 +1,1 @@
+<?php header( 'Location: /blockly-master/demos/codelab/myapp/index.html' ) ;  ?>

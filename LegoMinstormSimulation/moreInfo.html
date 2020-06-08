@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <style>
+      body {
+        margin: 0;
+
+      }
+      canvas {
+        display: block;
+      }
+      
+    </style> -->
+    
+
+  
+  
+  
+    <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+
+
+  <header class="header colored sticky-header" data-scroll="out">
+          <div class="c-container">
+            <div class="nav-items">
+            <a href="">
+            <img class="site-logo" src="logo (2).png" alt="">
+            </a>
+            <ul class="main-nav">
+              <li class="nav-item active">
+              <a class="nav-link active" onclick="redirectSimulation()" href="#">Simulator</a>
+              </li>
+              <li class="nav-item">
+              <a id = "blocklyhtml" class="nav-link" onclick="redirect()" href="#">Blockly Workspace</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="redirectDemo()" href="#">Demo</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" onclick="redirectInfo()" href="#">More Info</a>
+                </li>
+              
+            </ul>
+            
+            </div>
+          </div>
+        </header>
+        <script type="text/javascript" > 
+        function redirectSimulation(){
+          location.replace("/LegoMinstormSimulation/indexX.html")
+        }
+
+          
+          function redirectDemo(){
+            location.replace("/LegoMinstormSimulation/demo.html")
+          }
+          function redirectInfo(){
+            location.replace("/LegoMinstormSimulation/moreInfo.html")
+          }
+          function redirect() {
+           
+          location.replace("/blockly-master/demos/codelab/myapp/index.html")
+        }
+        
+          
+     
+        
+        
+          </script>
+          <table>
+            <thead>
+              <tr>
+                <td></td>
+                <th>What does it do?</th>
+                
+                <th>Measuring Units</th>
+            
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Ultrasonic Sensor</th>
+                <td>The ultrasonic sensor measures distance to an 
+                  object up to a maximum of 255cm (or 100 inches) 
+                  away. It does this by sending out high frequency
+                  sound waves that bounce off any object in range,
+                  and measuring how long it takes the sound to 
+                  return to the sensor.</td>
+                <td>Results appear in cm with a maximum of 255 and a minimum of 0</td>
+                
+               
+              </tr>
+               <tr>
+                <th>Infrared Sensor</th>
+                <td>The infrared sensor sends an infrared signal
+                  and detects the reflection of this signal by an 
+                  object in front of the sensor. The strength of
+                  the reflected signal can be used to estimate th
+                  e distance to the object. Its maximum range is 
+                  approximately 70 cm.</td>
+                <td>Results appear with a maximum of 100 (closest) and a minimum of 0</td>
+                
+             
+              </tr>
+               <tr>
+                <th>Colour Sensor</th>
+                <td>The colour sensor can differentiate up to 
+                  seven different colours: black, blue, green, 
+                  yellow, red, white, and brown, the sensor needs
+                  to be 1-2 cm away from the colour you are 
+                  trying to detect</td>
+                <td>Results are black, blue, green, 
+                  yellow, red, white, brown and no colour </td>
+               
+              
+              </tr>
+               <tr>
+                <th>Colour Sensor Image</th>
+                <td>The colour sensor read the colour of the
+                  point that it is on top off</td>
+                <td> Results appear in a RGB format</td>
+                
+               
+              </tr>
+               <tr>
+                <th>Colour Sensor Ambient</th>
+                <td>the colour sensor measures the amount of light
+                  in its environment, without producing its own 
+                  light source.</td>
+                <td> Results appear as a percentage from 0 to 100, with 0 
+                  being very dark, and 100 being very bright.</td>
+              
+             
+              </tr> <tr>
+                <th>Gyro Sensor</th>
+                <td>The gyro sensor detects rotational motion in 
+                  the plane indicated by the arrows on the top of
+                  the sensor housing. The sensor measures the rate 
+                  of rotation in degrees per second and keeps 
+                  track of the total angle of rotation in degrees.</td>
+                <td>Results appear as degrees for the angle, and a rate for the rate of rotation </td>
+               
+              
+              </tr>
+               <tr>
+                <th>Touch Sensor</th>
+                <td>The touch sensor gives your
+                  robot a sense of touch. The touch sensor
+                  detects when it is being pressed or
+                  released. It can even be programmed to wait
+                  until it is both pressed and released 
+                  (we call this bumped).</td>
+                <td>Results are either released, pressed or bumped</td>
+               
+               
+              </tr>
+                   <tr>
+                <th>Movement</th>
+                <td>The robot simulation only includes one 
+                  "motor for movement".</td>
+                <td>Input taken to move robot is a percentage</td>
+               
+               
+              </tr>
+                   <tr>
+                <th>Rotation</th>
+                <td>The robot can rotate as accurate as 1
+                  degree per frame.</td>
+                <td>Input taken to rotate robot is a degree</td>
+              
+               
+              </tr>
+            <tbody>
+          </table>
+</html>

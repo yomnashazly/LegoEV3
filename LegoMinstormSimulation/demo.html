@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <style>
+      body {
+        margin: 0;
+
+      }
+      canvas {
+        display: block;
+      }
+      
+    </style> -->
+    
+
+  
+  
+  
+    <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+
+
+  <header class="header colored sticky-header" data-scroll="out">
+          <div class="c-container">
+            <div class="nav-items">
+            <a href="">
+            <img class="site-logo" src="logo (2).png" alt="">
+            </a>
+            <ul class="main-nav">
+              <li class="nav-item active">
+              <a class="nav-link active"  onclick="redirectSimulation()" href="#">Simulator</a>
+              </li>
+              <li class="nav-item">
+              <a id = "blocklyhtml" class="nav-link" onclick="redirect()" href="#">Blockly Workspace</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  onclick="redirectDemo()" href="#">Demo</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link"  onclick="redirectInfo()" href="#">More Info</a>
+                </li>
+              
+            </ul>
+            
+            </div>
+          </div>
+        </header>
+        <script type="text/javascript" > 
+        function redirectSimulation(){
+          location.replace("/LegoMinstormSimulation/indexX.html")  
+        }
+          
+            function redirectDemo(){
+              location.replace("/LegoMinstormSimulation/demo.html")  
+            }
+            function redirectInfo(){
+              location.replace("/LegoMinstormSimulation/moreInfo.html")
+            }
+            function redirect() {
+             
+            location.replace("/blockly-master/demos/codelab/myapp/index.html")
+          }
+          
+            
+       
+          
+          
+            </script>
+</html>
