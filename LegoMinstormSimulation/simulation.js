@@ -60,7 +60,7 @@ function simulation() {
 	//touchSensorFunction();
 	gyroSensorFunction();
 
-	 moveRobot(0.2);
+	// moveRobot(0.2);
 
 	// if (ultrasonicSensor==0){
 
