@@ -251,6 +251,7 @@ function ultrasonicSensorFunction() {
 			var changeX = child.position.x - cube2.position.x;
 			var changeZ = child.position.z - cube2.position.z;
 			ultrasonicSensor = Math.sqrt( changeX * changeX + changeZ * changeZ );
+			ultrasonicSensor = ultrasonicSensor.toFixed(2);
 			document.getElementById( 'Ultrasonic' ).innerHTML =
         'Ultrasonic Sensor Value= ' + ultrasonicSensor 
 
@@ -346,6 +347,7 @@ function infraredSensorProximityFunction() {
 			var changeX = child.position.x - cube2.position.x;
 			var changeZ = child.position.z - cube2.position.z;
 			infraredSensor = Math.sqrt( changeX * changeX + changeZ * changeZ ) / 70 * 100;
+			infraredSensor = infraredSensor.toFixed(2);
 			document.getElementById( 'Infrared' ).innerHTML =
         'Infrared Sensor Value= ' + infraredSensor 
 
