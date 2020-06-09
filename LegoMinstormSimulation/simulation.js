@@ -51,6 +51,7 @@ function simulation() {
 			startRotate();
 		}
 		x++;
+		
 			colourSensorFunction();
 	colourSensorFunctionImage();
 	colourSensorAmbientFunction();
@@ -60,11 +61,7 @@ function simulation() {
 	//touchSensorFunction();
 	gyroSensorFunction();
 
-<<<<<<< HEAD
 	// moveRobot(0.2);
-=======
-	 moveRobot(0.2);
->>>>>>> e978e9a74e8986dc30e130ef79bd96723d6b371e
 
 	// if (ultrasonicSensor==0){
 

@@ -228,6 +228,8 @@ Blockly.Blocks['move_forward'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(285);
+
+
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -236,7 +238,7 @@ Blockly.Blocks['move_forward'] = {
 Blockly.JavaScript['move_forward'] = function(block) {
   var dropdown_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'moveRobot(0);'
+  var code = 'moveRobot(0.2);'
   return code;
 };
 
