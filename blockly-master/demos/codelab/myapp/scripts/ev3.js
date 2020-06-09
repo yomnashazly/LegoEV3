@@ -27,7 +27,7 @@ Blockly.Blocks['touch_sensor'] = {
         init: function() {
           this.appendDummyInput()
               .appendField(new Blockly.FieldLabelSerializable("Color sensor detects"), "color_sensor")
-              .appendField(new Blockly.FieldDropdown([["No color","NoColour"],["White","White"],["Black","Black"], ["Red","Red"] ,["Brown","Brown"],["Green","Green"],["Yellow","Yellow"],["Blue","Blue"]]), "NAME");
+              .appendField(new Blockly.FieldDropdown([["No color","NoColour"],["White","white"],["Black","black"], ["Red","red"] ,["Brown","brown"],["Green","green"],["Yellow","yellow"],["Blue","blue"]]), "NAME");
           this.setOutput(true, null);
           this.setColour(100);
        this.setTooltip("condition that checks for the color that sensor detects");
@@ -227,7 +227,7 @@ Blockly.Blocks['move_forward'] = {
         .appendField(new Blockly.FieldDropdown([["Forward","forward"], ["Backward","backward"]]), "NAME");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(285);
+    this.setColour(290);
 
 
  this.setTooltip("");

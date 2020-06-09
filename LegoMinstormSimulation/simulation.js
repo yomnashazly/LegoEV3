@@ -77,11 +77,11 @@ function simulation() {
 	// }
 	// rotateRobot(0.02);
 	// moveRobot(0.05);
-// 	 try{
-// 	 eval(localStorage.getItem("code"));
-//  }catch(e){
-// 	 alert(e);
-//  }
+	 try{
+	 eval(localStorage.getItem("code"));
+ }catch(e){
+	 alert(e);
+ }
 		
 
 	}
