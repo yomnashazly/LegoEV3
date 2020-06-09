@@ -95,7 +95,7 @@ Blockly.Blocks['light_intensity'] = {
         .appendField(new Blockly.FieldDropdown([["cm","cm"], ["inches","inches"]]), "NAME")
         .appendField("?");
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(500);
  this.setTooltip("");
  this.setHelpUrl("");
   }
