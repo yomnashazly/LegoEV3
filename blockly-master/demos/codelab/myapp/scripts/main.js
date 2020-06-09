@@ -282,8 +282,14 @@ document.getElementById("workspace_number").style.columnWidth= 90/number;
   Blockly.inject('blockly-div', {
     media: '../../../media/',
     toolbox: document.getElementById('toolbox'),
-    toolboxPosition: 'end',
-    horizontalLayout: true,
-    scrollbars: false
+    zoom:
+    {controls: true,
+     startScale: 1.0,
+     maxScale: 3,
+     minScale: 0.3,
+     scaleSpeed: 1.2},
+    toolboxPosition: 'begin',
+    // horizontalLayout: true,
+    scrollbars: true
   });
 })();
