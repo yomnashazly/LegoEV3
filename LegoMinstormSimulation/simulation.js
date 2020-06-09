@@ -51,6 +51,7 @@ function simulation() {
 			startRotate();
 		}
 		x++;
+		
 			colourSensorFunction();
 	colourSensorFunctionImage();
 	colourSensorAmbientFunction();
