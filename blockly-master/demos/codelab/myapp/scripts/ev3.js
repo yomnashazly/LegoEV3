@@ -27,10 +27,10 @@ Blockly.Blocks['touch_sensor'] = {
         init: function() {
           this.appendDummyInput()
               .appendField(new Blockly.FieldLabelSerializable("Color sensor detects"), "color_sensor")
-              .appendField(new Blockly.FieldDropdown([["No color","no_color"],["White","white"],["Black","black"], ["Red","red"] ,["Brown","brown"],["Green","green"],["Yellow","yellow"],["Blue","blue"]]), "NAME");
+              .appendField(new Blockly.FieldDropdown([["No color","NoColour"],["White","White"],["Black","Black"], ["Red","Red"] ,["Brown","Brown"],["Green","Green"],["Yellow","Yellow"],["Blue","Blue"]]), "NAME");
           this.setOutput(true, null);
           this.setColour(100);
-       this.setTooltip("");
+       this.setTooltip("condition that checks for the color that sensor detects");
        this.setHelpUrl("");
         }
       };
@@ -50,7 +50,7 @@ Blockly.Blocks['touch_sensor'] = {
                   .appendField(new Blockly.FieldLabelSerializable("color that sensor detects"), "NAME");
               this.setOutput(true, null);
               this.setColour(100);
-           this.setTooltip("");
+           this.setTooltip("returns the color that the sensor currently detects");
            this.setHelpUrl("");
             }
           };
