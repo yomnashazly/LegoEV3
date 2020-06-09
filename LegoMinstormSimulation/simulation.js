@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 
 function start(){
 	start = true;
@@ -61,7 +60,11 @@ function simulation() {
 	//touchSensorFunction();
 	gyroSensorFunction();
 
+<<<<<<< HEAD
 	// moveRobot(0.2);
+=======
+	 moveRobot(0.2);
+>>>>>>> e978e9a74e8986dc30e130ef79bd96723d6b371e
 
 	// if (ultrasonicSensor==0){
 
@@ -95,16 +98,6 @@ function simulation() {
 	}
 
 
-=======
-function simulation() {
-
-
- try{
-	 eval(localStorage.getItem("code"));
- }catch(e){
-	 alert(e);
- }
->>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 
 
 }

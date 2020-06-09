@@ -17,7 +17,6 @@ function init() {
 	group = new THREE.Group();
 	camera = new THREE.PerspectiveCamera( 90, 1280 / 720, 0.1, 1000 );
 
-<<<<<<< HEAD
 	camera.position.set(- 30, 20, 30 );
 	const color = 0xffffff;
 	const intensity = 0.7;
@@ -27,39 +26,18 @@ function init() {
 
 	scene.add( light );
 //	scene.add( light2 );
-=======
-	camera.position.set( 0, 50, 0 );
-	const color = 0xffffff;
-	const intensity = 0.5;
-	light = new THREE.AmbientLight( color, intensity );
-	var light2 = new THREE.AmbientLight( 0x404040 );
-	light.castShadow = true;
-
-	scene.add( light );
-	scene.add( light2 );
->>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 	clock = new THREE.Clock();
 	raycaster = new THREE.Raycaster();
 	mouse = new THREE.Vector2();
 
-<<<<<<< HEAD
 	
-=======
-	camera.lookAt( new THREE.Vector3( 0, player.height, 0 ) );
->>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 
 
 	triangleGeometry = new THREE.Geometry();
 	var z = Math.tan( ( 30 * Math.PI ) / 180 ) * 255;
-<<<<<<< HEAD
 	triangleGeometry.vertices.push( new THREE.Vector3( 0.0, -5, 0.0 ) );
 	triangleGeometry.vertices.push( new THREE.Vector3( - 255.0,-5 , - z ) );
 	triangleGeometry.vertices.push( new THREE.Vector3( - 255.0, -5, z ) );
-=======
-	triangleGeometry.vertices.push( new THREE.Vector3( 0.0, 0, 0.0 ) );
-	triangleGeometry.vertices.push( new THREE.Vector3( - 255.0,0 , - z ) );
-	triangleGeometry.vertices.push( new THREE.Vector3( - 255.0, 0, z ) );
->>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 	triangleGeometry.faces.push( new THREE.Face3( 0, 1, 2 ) );
 
 	var triangleMaterial = new THREE.MeshBasicMaterial( {
@@ -73,15 +51,9 @@ function init() {
 
 	triangleGeometry2 = new THREE.Geometry();
 	var z = Math.tan( ( 5 * Math.PI ) / 180 ) * 70;
-<<<<<<< HEAD
 	triangleGeometry2.vertices.push( new THREE.Vector3( 0.0, -5, 0.0 ) );
 	triangleGeometry2.vertices.push( new THREE.Vector3( - 70.0, -5, - z ) );
 	triangleGeometry2.vertices.push( new THREE.Vector3( - 70.0, -5, z ) );
-=======
-	triangleGeometry2.vertices.push( new THREE.Vector3( 0.0, 5.0, 0.0 ) );
-	triangleGeometry2.vertices.push( new THREE.Vector3( - 70.0, 5.0, - z ) );
-	triangleGeometry2.vertices.push( new THREE.Vector3( - 70.0, 5.0, z ) );
->>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 	triangleGeometry2.faces.push( new THREE.Face3( 0, 1, 2 ) );
 
 	var triangleMaterial = new THREE.MeshBasicMaterial( {
@@ -95,15 +67,9 @@ function init() {
 
 	triangleGeometry3 = new THREE.Geometry();
 	var z = Math.tan( ( 25 * Math.PI ) / 180 ) * 200;
-<<<<<<< HEAD
 	triangleGeometry3.vertices.push( new THREE.Vector3( 0.0, -5, 0.0 ) );
 	triangleGeometry3.vertices.push( new THREE.Vector3( - 200.0, -5, - z ) );
 	triangleGeometry3.vertices.push( new THREE.Vector3( - 200.0, -5, z ) );
-=======
-	triangleGeometry3.vertices.push( new THREE.Vector3( 0.0, 0.0, 0.0 ) );
-	triangleGeometry3.vertices.push( new THREE.Vector3( - 200.0, 0.0, - z ) );
-	triangleGeometry3.vertices.push( new THREE.Vector3( - 200.0, 0.0, z ) );
->>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 	triangleGeometry3.faces.push( new THREE.Face3( 0, 1, 2 ) );
 
 	var triangleMaterial = new THREE.MeshBasicMaterial( {
@@ -117,15 +83,9 @@ function init() {
 
 	triangleGeometry4 = new THREE.Geometry();
 	var z = Math.tan( ( 25 * Math.PI ) / 180 ) * 5;
-<<<<<<< HEAD
 	triangleGeometry4.vertices.push( new THREE.Vector3( 0.0, -5, 0.0 ) );
 	triangleGeometry4.vertices.push( new THREE.Vector3( - 5.0, -5, - z ) );
 	triangleGeometry4.vertices.push( new THREE.Vector3( - 5.0, -5, z ) );
-=======
-	triangleGeometry4.vertices.push( new THREE.Vector3( 0.0, 0.0, 0.0 ) );
-	triangleGeometry4.vertices.push( new THREE.Vector3( - 5.0, 0.0, - z ) );
-	triangleGeometry4.vertices.push( new THREE.Vector3( - 5.0, 0.0, z ) );
->>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 	triangleGeometry4.faces.push( new THREE.Face3( 0, 1, 2 ) );
 
 	var triangleMaterial = new THREE.MeshBasicMaterial( {
@@ -181,7 +141,6 @@ function init() {
 	group.add( cube6 );
 
 	scene.add( group );
-<<<<<<< HEAD
 // 	var loader  = new THREE.TextureLoader(),
 // 	texture = loader.load( "floor.jpg" );
 // 	var material = new THREE.MeshPhongMaterial({ 
@@ -197,13 +156,6 @@ texture.repeat.set( 4, 4 );
 		new THREE.PlaneGeometry( 1000, 1000, 1000, 1000 ), material
 		 )
 	;
-=======
-
-	meshFloor = new THREE.Mesh(
-		new THREE.PlaneGeometry( 1000, 1000, 1000, 1000 ),
-		new THREE.MeshBasicMaterial( { color: 0x000000, wireframe: USE_WIREFRAME } )
-	);
->>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 	meshFloor.receiveShadow = true;
 	meshFloor.rotation.x -= Math.PI / 2; // Rotate the floor 90 degrees
 	scene.add( meshFloor );
@@ -217,18 +169,11 @@ texture.repeat.set( 4, 4 );
 	// document.body.appendChild(renderer.domElement);
 
 	renderer.setSize(
-<<<<<<< HEAD
 	  window.innerWidth - window.innerWidth / 2.29,
 	  window.innerHeight - window.innerHeight / 8);
 	document.body.appendChild( renderer.domElement );
 
 
-=======
-	  window.innerWidth - window.innerWidth / 3.5,
-	  window.innerHeight - window.innerHeight / 7
-	);
-	document.body.appendChild( renderer.domElement );
->>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 	//THREE.WebGLRenderer.compile(scene, camera);
 	//document.addEventListener("mousedown", onDocumentMouseDown, false);
 	var loader = new THREE.TextureLoader();
@@ -283,7 +228,6 @@ texture.repeat.set( 4, 4 );
 
 //	scene.add( triangle );
 	robot = "complexRobot";
-<<<<<<< HEAD
 	var skyGeo = new THREE.SphereGeometry(1000, 25, 25); 
 	var loader  = new THREE.TextureLoader(),
 	texture = loader.load( "sky.jpg" );
@@ -294,9 +238,6 @@ var sky = new THREE.Mesh(skyGeo, material);
 //sky.rotateZ(3);
     sky.material.side = THREE.BackSide;
     scene.add(sky);
-=======
-
->>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 	displayRobotSim();
 	animate();
 }
@@ -304,7 +245,6 @@ var sky = new THREE.Mesh(skyGeo, material);
 function displayRobotSim() {
 	if ( robot == "complexRobot" ) {
 		//alert("if condition");
-<<<<<<< HEAD
 		const loadingManager = new THREE.LoadingManager( () => {
 	
 			const loadingScreen = document.getElementById( 'loading-screen' );
@@ -316,10 +256,6 @@ function displayRobotSim() {
 		} );
 	
 		var loader = new THREE.GLTFLoader(loadingManager);
-=======
-
-		var loader = new THREE.GLTFLoader();
->>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 		loader.load( "LegoRobot/ComplexRobot.gltf", handle_load );
 		// object;
 		renderer.setClearColor( 0xffffff );
@@ -479,74 +415,6 @@ function displayRobotSim() {
 	}
 }
 
-<<<<<<< HEAD
-=======
-function onClick() {
-	event.preventDefault();
-
-	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-
-	raycaster.setFromCamera( mouse, camera );
-
-	var intersects = raycaster.intersectObjects( scene.children, true );
-
-	if ( intersects.length > 0 ) {
-		if (
-			intersects[ 0 ].point.x <= xMax &&
-      intersects[ 0 ].point.x >= xMin &&
-      intersects[ 0 ].point.y <= yMax &&
-      intersects[ 0 ].point.y >= yMin &&
-      intersects[ 0 ].point.z >= zMin &&
-      intersects[ 0 ].point.z <= zMax
-		) {
-			console.log( "Intersection:", intersects[ 0 ], intersects[ 0 ].point.x );
-			if ( confirm( "Do you want to Bump Sensor?" ) ) {
-				touchSensor = "bumped";
-				touchSensorFunction();
-				// console.log("Thing was saved to the database.");
-			} else {
-				// Do nothing!
-				if ( touchSensor == "released" ) {
-					console.log( "dakhal" );
-					touchSensor = "pressed";
-					console.log( touchSensor );
-
-					touchSensorFunction();
-				} else {
-					if ( touchSensor == undefined ) {
-						console.log( "dakhal1" );
-						touchSensor = "released";
-						console.log( touchSensor );
-
-						touchSensorFunction();
-					} else {
-						if ( touchSensor == "pressed" ) {
-							touchSensor = "released";
-
-							touchSensorFunction();
-						} else {
-							if ( touchSensor == "bumped" ) {
-								touchSensor = "released";
-								touchSensorFunction();
-							}
-						}
-					}
-				}
-				console.log( "Thing was not saved to the database." );
-			}
-		} else {
-			console.log(
-				"no",
-				intersects[ 0 ].point.x,
-				intersects[ 0 ].point.y,
-				intersects[ 0 ].point.z
-			);
-		}
-	}
-}
-
->>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 function animate() {
 	//debugger;
 	//ultrasonicSensorFunction();
@@ -560,11 +428,7 @@ function animate() {
 		robotZ = position.z;
 
 		//document.addEventListener("mousedown", onMouseDown, false);
-<<<<<<< HEAD
 		// renderer.domElement.addEventListener( "click", onClick, false );
-=======
-		renderer.domElement.addEventListener( "click", onClick, false );
->>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 
 		bbox = new THREE.Box3().setFromObject( body );
 		xMin = bbox.min.x;
@@ -578,10 +442,7 @@ function animate() {
 
 		if ( itn == 1 ) {
 			head = new THREE.Vector3( xMin, 5, ( zMax - zMin ) / 2 + zMin );
-<<<<<<< HEAD
 			document.getElementById('blockly').contentWindow.location.reload();
-=======
->>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 		}
 
 		// head.x = xMin;
@@ -592,14 +453,11 @@ function animate() {
 		cube2.position.z = head.z;
 
 		if ( itn == 1 ) {
-<<<<<<< HEAD
 
 
 
 // console.log(window.innerWidth*1, window.innerHeight*1);
 
-=======
->>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 			triangleGeometry.translate( cube2.position.x, 0, cube2.position.z );
 			triangleGeometry2.translate( cube2.position.x, 0, cube2.position.z );
 			triangleGeometry3.translate( cube2.position.x, 0, cube2.position.z );
@@ -611,7 +469,6 @@ function animate() {
 			triangle.c.x += cube2.position.x;
 			triangle.c.z += cube2.position.z;
 
-<<<<<<< HEAD
 		//console.log(triangle.a );
 		// console.log(triang//le.b );
 		// console.log(triangle.c);
@@ -667,60 +524,6 @@ function animate() {
 	// 	// right arrow key
 	// 	camera.rotation.y += player.turnSpeed;
 	// }
-=======
-			console.log(triangle.a );
-		console.log(triangle.b );
-		console.log(triangle.c);
-
-		console.log(triangleGeometry.vertices[0]);
-		console.log(triangleGeometry.vertices[1]);
-		console.log(triangleGeometry.vertices[2]);
-
-
-		}
-		itn += 1;
-
-		simulation();
-
-		camera.position.x = body.position.x;
-		camera.position.z = body.position.z;
-	}
-
-	 document.getElementById( "function" ).innerHTML = localStorage.getItem("code");
-
-	// Keyboard movement inputs6
-	if ( keyboard[ 87 ] ) {
-		// W key
-		camera.position.x += Math.sin( camera.rotation.y ) * 4;
-		camera.position.z += - Math.cos( camera.rotation.y ) * 4;
-	}
-	if ( keyboard[ 83 ] ) {
-		// S key
-		camera.position.x -= Math.sin( camera.rotation.y ) * 4;
-		camera.position.z -= - Math.cos( camera.rotation.y ) * 4;
-	}
-	if ( keyboard[ 65 ] ) {
-		// A key
-		// Redirect motion by 90 degrees
-		camera.position.x -= Math.sin( camera.rotation.y + Math.PI / 2 ) * 4;
-		camera.position.z -= - Math.cos( camera.rotation.y + Math.PI / 2 ) * 4;
-	}
-	if ( keyboard[ 68 ] ) {
-		// D key
-		camera.position.x -= Math.sin( camera.rotation.y - Math.PI / 2 ) * 4;
-		camera.position.z -= - Math.cos( camera.rotation.y - Math.PI / 2 ) * 4;
-	}
-
-	// Keyboard turn inputs
-	if ( keyboard[ 37 ] ) {
-		// left arrow key
-		camera.rotation.y -= player.turnSpeed;
-	}
-	if ( keyboard[ 39 ] ) {
-		// right arrow key
-		camera.rotation.y += player.turnSpeed;
-	}
->>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 	// if (canvas != null) {
 	//   console.log("in");
 	//   document.getElementById("Colour").innerHTML = "in";
@@ -772,11 +575,7 @@ function animate() {
 
 function onDocumentMouseMove( event ) {
 	event.preventDefault();
-<<<<<<< HEAD
 	mouseX = event.clientX + 500;
-=======
-	mouseX = event.clientX;
->>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 	mouseY = event.clientY;
 	// mouseX = (event.clientX / window.innerWidth) * 2 - 1;
 	// mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
@@ -809,7 +608,6 @@ function keyDown( event ) {
 function keyUp( event ) {
 	keyboard[ event.keyCode ] = false;
 }
-<<<<<<< HEAD
 function onTransitionEnd( event ) {
 
 	event.target.remove();
@@ -824,9 +622,6 @@ function changeIntoMorning(){
 	light.intensity = 0.7;
 
 }
-=======
-
->>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 window.addEventListener( "keydown", keyDown );
 window.addEventListener( "keyup", keyUp );
 
