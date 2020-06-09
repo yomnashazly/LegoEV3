@@ -240,7 +240,7 @@ Blockly.Blocks['move_forward'] = {
 Blockly.JavaScript['move_forward'] = function(block) {
   var dropdown_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = 'moveRobot(0);'
   return code;
 };
 
