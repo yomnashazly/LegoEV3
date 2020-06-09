@@ -223,5 +223,65 @@ Blockly.JavaScript['is_angle'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
-//-----------------------------------------------------------------------------------------------------
+//-------------------------------------------------Move forward/backward----------------------------------------------------
+Blockly.Blocks['move_forward'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Move")
+        .appendField(new Blockly.FieldDropdown([["Forward","forward"], ["Backward","backward"]]), "NAME");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(285);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
 
+Blockly.JavaScript['move_forward'] = function(block) {
+  var dropdown_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+//-----------------------------------------------------start moving------------------------------------------------
+Blockly.Blocks['start_moving'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Start moving")
+        .appendField(new Blockly.FieldAngle(0), "angle");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(290);
+ this.setTooltip("0 means straight");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.JavaScript['start_moving'] = function(block) {
+  var angle_angle = block.getFieldValue('angle');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'startMoving();';
+  return code;
+};
+//------------------------------------------------movement speed--------------------------------------------------
+Blockly.Blocks['movement_speed'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Set movement speed to")
+        .appendField(new Blockly.FieldNumber(100, 0), "NAME")
+        .appendField("%");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(290);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.JavaScript['movement_speed'] = function(block) {
+  var number_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
