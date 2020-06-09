@@ -88,24 +88,20 @@ Blockly.JavaScript['get_distance'] = function(block) {
 Blockly.Blocks['light_intensity'] = {
   init: function() {
     this.appendDummyInput()
-        // .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"],["3","3"], ["4","4"]]), "NAME")
         .appendField("Reflected light intensity")
         .appendField(new Blockly.FieldDropdown([["<","<"], [">",">"], ["=","="]]), "NAME")
-        .appendField(new Blockly.FieldTextInput("15"), "light_intensity")
-        .appendField(new Blockly.FieldDropdown([["cm","cm"], ["inches","inches"]]), "NAME")
-        .appendField("?");
+        .appendField(new Blockly.FieldNumber(0), "NAME")
+        .appendField("%");
     this.setOutput(true, null);
-    this.setColour(500);
+    this.setColour(320);
  this.setTooltip("");
  this.setHelpUrl("");
   }
 };
-
 Blockly.JavaScript['light_intensity'] = function(block) {
   var dropdown_name = block.getFieldValue('NAME');
   var dropdown_name = block.getFieldValue('NAME');
-  var text_light_intensity = block.getFieldValue('light_intensity');
-  var dropdown_name = block.getFieldValue('NAME');
+  var number_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
   var code = '...';
   // TODO: Change ORDER_NONE to the correct strength.
