@@ -4,9 +4,14 @@ var scene;
 var clock;
 var light;
 var frontOfRobot;
+<<<<<<< HEAD
 var start, stop,reset = false;
 // localStorage.setItem("scene", scene);
 var move = true;
+=======
+// localStorage.setItem("scene", scene);
+var move = false;
+>>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 var rotate = true;
 var head;
 var cube2;
@@ -39,7 +44,11 @@ var itn = 1;
 var group;
 var cube;
 var material;
+<<<<<<< HEAD
 var touchSensor = "released";
+=======
+var touchSensor;
+>>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 var touchSensorOn = false;
 
 var raycaster, mouse;
@@ -47,9 +56,12 @@ var raycaster, mouse;
 // localStorage.setItem("touchSensorOn", touchSensorOn);
 var object;
 var colourSensor;
+<<<<<<< HEAD
 var colourSensorAmbient;
 var colourSensorImage;
 
+=======
+>>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 var colourSensorOn = false;
 var colourSensorMode;
 // localStorage.setItem("colourSensor", colourSensor);
@@ -61,6 +73,7 @@ var ultrasonicSensorOn = true;
 // localStorage.setItem("ultrasonicSensor", ultrasonicSensor);
 // localStorage.setItem("ultrasonicSensorOn", ultrasonicSensorOn);
 
+<<<<<<< HEAD
 var gyroSensorRateofRotation = 0;
 var gyroSensorTotalAngleRotation = 0;
 var gyroSensorOn = false;
@@ -69,6 +82,11 @@ var x = 0;
 
 var width =  window.innerWidth;
 var height =  window.innerHeight;
+=======
+var gyroSensorRateofRotation;
+var gyroSensorTotalAngleRotation = 0;
+var gyroSensorOn = false;
+>>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 // localStorage.setItem("gyroSensorRateofRotation", gyroSensorRateofRotation);
 // localStorage.setItem(
 //   "gyroSensorTotalAngleRotation",
@@ -104,5 +122,8 @@ var canvas = document.getElementById( "canvas" );
 var storageRef;
 var intersectionPoint = new THREE.Vector3( );
 var triangle; 
+<<<<<<< HEAD
 
 var i=0;
+=======
+>>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5

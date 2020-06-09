@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 
 function start(){
 	start = true;
@@ -94,6 +95,16 @@ function simulation() {
 	}
 
 
+=======
+function simulation() {
+
+
+ try{
+	 eval(localStorage.getItem("code"));
+ }catch(e){
+	 alert(e);
+ }
+>>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 
 
 }

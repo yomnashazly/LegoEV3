@@ -4,6 +4,7 @@ function moveRobot( hyp ) {
 	if (move == true){ 
 	if ( gyroSensorTotalAngleRotation == 0 ) {
 
+<<<<<<< HEAD
 		// wheel.position.x += - hyp;
 		// wheel2.position.x += - hyp;
 		// wheel3.position.x += - hyp;
@@ -34,10 +35,25 @@ function moveRobot( hyp ) {
 		
 
 		
+=======
+		wheel.position.x += - hyp;
+		wheel2.position.x += - hyp;
+		wheel3.position.x += - hyp;
+		wheel4.position.x += - hyp;
+		wheel5.position.x += - hyp;
+		wheel6.position.x += - hyp;
+		body.position.x += - hyp;
+		head.x += - hyp;
+		triangleGeometry.translate( - hyp, 0, 0 );
+		triangleGeometry2.translate( - hyp, 0, 0 );
+		triangleGeometry3.translate( - hyp, 0, 0 );
+		triangleGeometry4.translate( - hyp, 0, 0 );
+>>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 
 	}
 	if ( gyroSensorTotalAngleRotation == 90 ) {
 
+<<<<<<< HEAD
 		// wheel.position.z += - hyp;
 		// wheel2.position.z += - hyp;
 		// wheel3.position.z += - hyp;
@@ -66,11 +82,26 @@ function moveRobot( hyp ) {
 
 		mesh.position.z+=hyp;
 	
+=======
+		wheel.position.z += - hyp;
+		wheel2.position.z += - hyp;
+		wheel3.position.z += - hyp;
+		wheel4.position.z += - hyp;
+		wheel5.position.z += - hyp;
+		wheel6.position.z += - hyp;
+		body.position.z += - hyp;
+		head.z += - hyp;
+		triangleGeometry.translate( 0, 0, - hyp );
+		triangleGeometry2.translate( 0, 0, - hyp );
+		triangleGeometry3.translate( 0, 0, - hyp );
+		triangleGeometry4.translate( 0, 0, - hyp );
+>>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 
 	}
 
 	if ( gyroSensorTotalAngleRotation == 180 ) {
 
+<<<<<<< HEAD
 		// wheel.position.x += hyp;
 		// wheel2.position.x += hyp;
 		// wheel3.position.x += hyp;
@@ -103,11 +134,26 @@ function moveRobot( hyp ) {
 
 
 		
+=======
+		wheel.position.x += hyp;
+		wheel2.position.x += hyp;
+		wheel3.position.x += hyp;
+		wheel4.position.x += hyp;
+		wheel5.position.x += hyp;
+		wheel6.position.x += hyp;
+		body.position.x += hyp;
+		head.x += hyp;
+		triangleGeometry.translate( hyp, 0, 0 );
+		triangleGeometry2.translate( hyp, 0, 0 );
+		triangleGeometry3.translate( hyp, 0, 0 );
+		triangleGeometry4.translate( hyp, 0, 0 );
+>>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 
 	}
 
 	if ( gyroSensorTotalAngleRotation == 270 ) {
 
+<<<<<<< HEAD
 		// wheel.position.z += hyp;
 		// wheel2.position.z += hyp;
 		// wheel3.position.z += hyp;
@@ -138,6 +184,22 @@ function moveRobot( hyp ) {
 	
 			mesh.position.z-=hyp;
 		
+=======
+		wheel.position.z += hyp;
+		wheel2.position.z += hyp;
+		wheel3.position.z += hyp;
+		wheel4.position.z += hyp;
+		wheel5.position.z += hyp;
+		wheel6.position.z += hyp;
+		body.position.z += hyp;
+
+		head.z += hyp;
+		triangleGeometry.translate( 0, 0, hyp );
+		triangleGeometry2.translate( 0, 0, hyp );
+		triangleGeometry3.translate( 0, 0, hyp );
+		triangleGeometry4.translate( 0, 0, hyp );
+
+>>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 	}
 
 	if ( gyroSensorTotalAngleRotation < 90 && gyroSensorTotalAngleRotation != 0 ) {
@@ -157,6 +219,7 @@ function moveRobot( hyp ) {
 		// //console.log (body.position.x, body.position.z);
 
 		// //console.log (adj, opp);
+<<<<<<< HEAD
 		// wheel.position.z += opp;
 		// wheel2.position.z += opp;
 		// wheel3.position.z += opp;
@@ -205,6 +268,30 @@ function moveRobot( hyp ) {
 			mesh.position.x+=adj;
 
 		
+=======
+		wheel.position.z += opp;
+		wheel2.position.z += opp;
+		wheel3.position.z += opp;
+		wheel4.position.z += opp;
+		wheel5.position.z += opp;
+		wheel6.position.z += opp;
+		body.position.z += opp;
+		head.z += opp;
+
+		wheel.position.x -= adj;
+		wheel2.position.x -= adj;
+		wheel3.position.x -= adj;
+		wheel4.position.x -= adj;
+		wheel5.position.x -= adj;
+		wheel6.position.x -= adj;
+		body.position.x -= adj;
+		head.x -= adj;
+
+		triangleGeometry.translate( - adj, 0, opp );
+		triangleGeometry2.translate( - adj, 0, opp );
+		triangleGeometry3.translate( - adj, 0, opp );
+		triangleGeometry4.translate( - adj, 0, opp );
+>>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 
 	}
 
@@ -216,6 +303,7 @@ function moveRobot( hyp ) {
 		// //console.log (body.position.x, body.position.z);
 
 		// //console.log (adj, opp);
+<<<<<<< HEAD
 		// wheel.position.z += opp;
 		// wheel2.position.z += opp;
 		// wheel3.position.z += opp;
@@ -259,6 +347,28 @@ function moveRobot( hyp ) {
 
 
 
+=======
+		wheel.position.z += opp;
+		wheel2.position.z += opp;
+		wheel3.position.z += opp;
+		wheel4.position.z += opp;
+		wheel5.position.z += opp;
+		wheel6.position.z += opp;
+		body.position.z += opp;
+		head.z += opp;
+
+		wheel.position.x += adj;
+		wheel2.position.x += adj;
+		wheel3.position.x += adj;
+		wheel4.position.x += adj;
+		wheel5.position.x += adj;
+		wheel6.position.x += adj;
+		head.x += adj;
+		triangleGeometry.translate( adj, 0, opp );
+		triangleGeometry2.translate( adj, 0, opp );
+		triangleGeometry3.translate( adj, 0, opp );
+		triangleGeometry4.translate( adj, 0, opp );
+>>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 
 	}
 
@@ -271,6 +381,7 @@ function moveRobot( hyp ) {
 		var adj = hyp * Math.cos( ang2 );
 		var opp = hyp * Math.sin( ang2 );
 
+<<<<<<< HEAD
 		// wheel.position.x += opp;
 		// wheel2.position.x += opp;
 		// wheel3.position.x += opp;
@@ -316,6 +427,30 @@ function moveRobot( hyp ) {
 		mesh.position.z-=adj;
 			mesh.position.x-=opp;
 
+=======
+		wheel.position.x += opp;
+		wheel2.position.x += opp;
+		wheel3.position.x += opp;
+		wheel4.position.x += opp;
+		wheel5.position.x += opp;
+		wheel6.position.x += opp;
+		body.position.x += opp;
+		head.x += opp;
+
+		wheel.position.z += adj;
+		wheel2.position.z += adj;
+		wheel3.position.z += adj;
+		wheel4.position.z += adj;
+		wheel5.position.z += adj;
+		wheel6.position.z += adj;
+		body.position.z += adj;
+		head.z += adj;
+
+		triangleGeometry.translate( opp, 0, adj );
+		triangleGeometry2.translate( opp, 0, adj );
+		triangleGeometry3.translate( opp, 0, adj );
+		triangleGeometry4.translate( opp, 0, adj );
+>>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 
 	}
 
@@ -328,6 +463,7 @@ function moveRobot( hyp ) {
 		var adj = hyp * Math.cos( ang2 );
 		var opp = hyp * Math.sin( ang2 );
 
+<<<<<<< HEAD
 		// wheel.position.z += opp;
 		// wheel2.position.z += opp;
 		// wheel3.position.z += opp;
@@ -379,12 +515,43 @@ function moveRobot( hyp ) {
 
 if (rotate==false){
 
+=======
+		wheel.position.z += opp;
+		wheel2.position.z += opp;
+		wheel3.position.z += opp;
+		wheel4.position.z += opp;
+		wheel5.position.z += opp;
+		wheel6.position.z += opp;
+		body.position.z += opp;
+		head.z += opp;
+
+		wheel.position.x -= adj;
+		wheel2.position.x -= adj;
+		wheel3.position.x -= adj;
+		wheel4.position.x -= adj;
+		wheel5.position.x -= adj;
+		wheel6.position.x -= adj;
+		body.position.x -= adj;
+		head.x -= adj;
+
+		triangleGeometry.translate( - adj, 0, opp );
+		triangleGeometry2.translate( - adj, 0, opp );
+		triangleGeometry3.translate( - adj, 0, opp );
+		triangleGeometry4.translate( - adj, 0, opp );
+
+	}
+
+>>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 	wheel.rotateY( ( hyp * 0.02 ) / 0.033 );
 	wheel2.rotateY( ( hyp * 0.02 ) / 0.033 );
 	wheel3.rotateY( ( hyp * 0.02 ) / 0.033 );
 	wheel4.rotateY( ( hyp * 0.02 ) / 0.033 );
 	wheel5.rotateY( ( hyp * 0.02 ) / 0.033 );
+<<<<<<< HEAD
 	wheel6.rotateY( ( hyp * 0.02 ) / 0.033 );}
+=======
+	wheel6.rotateY( ( hyp * 0.02 ) / 0.033 );
+>>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 	}
 }
 function stopMoving() {
@@ -396,8 +563,11 @@ function startMoving() {
 
 	move = true;
 
+<<<<<<< HEAD
 	
 
+=======
+>>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 }
 function stopRotate() {
 
@@ -407,7 +577,10 @@ function stopRotate() {
 function startRotate() {
 
 	rotate = true;
+<<<<<<< HEAD
 	
+=======
+>>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 
 }
 
@@ -415,6 +588,10 @@ function resetAngle(){
 	gyroSensorTotalAngleRotation = 0;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 function rotateRobot( ang ) {
 
 	if (rotate == true){
@@ -669,6 +846,7 @@ function rotateRobot( ang ) {
 	// //console.log (z1);
 	triangleGeometry4.vertices[ 2 ].x = x1 + robotX;
 	triangleGeometry4.vertices[ 2 ].z = z1 + robotZ;
+<<<<<<< HEAD
 
 
 	var x = camera.position.x - robotX;
@@ -682,6 +860,8 @@ function rotateRobot( ang ) {
 	// //console.log (z1);
 	camera.position.x = x1 + robotX;
 	camera.position.z = z1 + robotZ;
+=======
+>>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 	////console.log (triangleGeometry.vertices[2].x, triangleGeometry.vertices[2].z);
 	// triangleGeometry.vertices[2].set(
 	//   triangleGeometry.vertices[2].x,
@@ -711,6 +891,7 @@ function rotateRobot( ang ) {
 
 	}
 	body.rotateY( - ang );
+<<<<<<< HEAD
 
 	// controls.reset();
 	// camera.rotation.y -=ang; 
@@ -721,6 +902,9 @@ function rotateRobot( ang ) {
 	// 	camera.rotation.z -= ang;
 
 	// }
+=======
+	camera.rotation.z -= ang;
+>>>>>>> e3423e53bcd551988b781f9541c0cd6f752205d5
 	}
 }
 
