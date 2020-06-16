@@ -170,7 +170,7 @@ var texture = new THREE.TextureLoader().load( "floor.jpg" );
 texture.wrapS = THREE.RepeatWrapping;
 texture.wrapT = THREE.RepeatWrapping;
 texture.repeat.set( 4, 4 );
- var material = new THREE.MeshBasicMaterial( { color: 0x000000} );
+ var material = new THREE.MeshBasicMaterial( { color: 0x383838} );
 	meshFloor = new THREE.Mesh(
 		new THREE.PlaneGeometry( 1000, 1000, 1000, 1000 ), material
 		 )
