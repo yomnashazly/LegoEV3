@@ -256,7 +256,8 @@ texture.repeat.set( 4, 4 );
 var sky = new THREE.Mesh(skyGeo, material);
 //sky.rotateZ(3);
     sky.material.side = THREE.BackSide;
-    scene.add(sky);
+	scene.add(sky);
+	renderer.compile(scene, camera); 
 	displayRobotSim();
 	animate();
 }
