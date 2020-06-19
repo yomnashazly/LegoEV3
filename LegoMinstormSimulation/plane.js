@@ -287,7 +287,7 @@ function displayRobotSim() {
 		function handle_load( gltf ) {
 			object = gltf.scene.children[ 0 ];
 			object.children[ 0 ].position.set( 0, 2.5, 0 );
-			object.children[ 0 ].rotateX( 2 * Math.PI );
+		//	object.children[ 0 ].rotateX( 2 * Math.PI );
 			//object.children[0].rotateY(-Math.PI / 2);
 			object.children[ 0 ].scale.x = 0.06;
 			object.children[ 0 ].scale.y = 0.06;
@@ -296,156 +296,210 @@ function displayRobotSim() {
 			object.children[ 0 ].castShadow = true;
 			body = object.children[ 0 ];
 			scene.add( object.children[ 0 ] );
-			//mesh.position, (z = -500);
-			// var loader = new THREE.ObjectLoader();
-			// loader.load("/LegoRobot/ComplexRobot.dae.json", function (object) {
-			//   //group = new THREE.Group();
-
-			//   //group.add(object);
-			//   //group.Rotate(1.57);
-			//   // robotMesh = object;
-
-			//   object.children[0].position.set(0, 0, 10);
-			//   object.rotateX(-Math.PI / 2);
-			//   object.scale.x = 0.25;
-			//   object.scale.y = 0.25;
-			//   object.scale.z = 0.25;
-
-			//   body = object;
-			//   scene.add(object);
-			// });
-
-			// var loader = new THREE.ObjectLoader();
-			// loader.load( "/LegoMinstormSimulation/LegoRobot/wheel.dae (1).json", function ( object2 ) {
-			// 	//group = new THREE.Group();
-
-			// 	//group.add(object);
-			// 	//group.Rotate(1.57);
-			// 	// robotMesh = object;
-
-			// 	// object2.children[0].position.set(0, 50, 100);
-			// 	object2.position.set( 8, 4.5, 19 );
-			// 	object2.rotateX( - Math.PI / 2 );
-
-			// 	object2.scale.x = 0.06;
-			// 	object2.scale.y = 0.06;
-			// 	object2.scale.z = 0.06;
-			// 	object2.receiveShadow = true;
-			// 	object2.castShadow = true;
-			// 	wheel = object2;
-
-			// 	scene.add( object2 );
-			// } );
-
-			// var loader = new THREE.ObjectLoader();
-			// loader.load( "/LegoMinstormSimulation/LegoRobot/wheel.dae (1).json", function ( object3 ) {
-			// 	//group = new THREE.Group();
-
-			// 	//group.add(object);
-			// 	//group.Rotate(1.57);
-			// 	// robotMesh = object;
-
-			// 	object3.position.set( - 3, 4.5, 19 );
-			// 	object3.rotateX( - Math.PI / 2 );
-			// 	object3.scale.x = 0.06;
-			// 	object3.scale.y = 0.06;
-			// 	object3.scale.z = 0.06;
-			// 	object3.receiveShadow = true;
-			// 	object3.castShadow = true;
-
-			// 	wheel2 = object3;
-
-			// 	scene.add( object3 );
-			// } );
-
-			// var loader = new THREE.ObjectLoader();
-			// loader.load("/LegoMinstormSimulation/LegoRobot/wheel.dae (1).json", function ( object4 ) {
-			// 	//group = new THREE.Group();
-
-			// 	//group.add(object);
-			// 	//group.Rotate(1.57);
-			// 	// robotMesh = object;
-
-			// 	object4.position.set( - 14, 4.5, 19 );
-			// 	object4.rotateX( - Math.PI / 2 );
-			// 	object4.scale.x = 0.06;
-			// 	object4.scale.y = 0.06;
-			// 	object4.scale.z = 0.06;
-			// 	object4.receiveShadow = true;
-			// 	object4.castShadow = true;
-			// 	wheel3 = object4;
-
-			// 	scene.add( object4 );
-			// } );
-
-			// var loader = new THREE.ObjectLoader();
-			// loader.load("/LegoMinstormSimulation/LegoRobot/wheel.dae (1).json", function ( object5 ) {
-			// 	//group = new THREE.Group();
-
-			// 	//group.add(object);
-			// 	//group.Rotate(1.57);
-			// 	// robotMesh = object;
-
-			// 	object5.position.set( 8, 4.5, - 8 );
-			// 	object5.rotateX( Math.PI / 2 );
-			// 	object5.scale.x = 0.06;
-			// 	object5.scale.y = 0.06;
-			// 	object5.scale.z = 0.06;
-			// 	object5.receiveShadow = true;
-			// 	object5.castShadow = true;
-			// 	wheel4 = object5;
-
-			// 	scene.add( object5 );
-			// } );
-			// var loader = new THREE.ObjectLoader();
-			// loader.load( "/LegoMinstormSimulation/LegoRobot/wheel.dae (1).json", function ( object6 ) {
-			// 	//group = new THREE.Group();
-
-			// 	//group.add(object);
-			// 	//group.Rotate(1.57);
-			// 	// robotMesh = object;
-
-			// 	object6.position.set( - 3, 4.5, - 8 );
-			// 	object6.rotateX( Math.PI / 2 );
-			// 	object6.scale.x = 0.06;
-			// 	object6.scale.y = 0.06;
-			// 	object6.scale.z = 0.06;
-			// 	object6.receiveShadow = true;
-			// 	object6.castShadow = true;
-			// 	wheel5 = object6;
-
-			// 	scene.add( object6 );
-			// } );
-
-			// var loader = new THREE.ObjectLoader();
-			// loader.load( "/LegoMinstormSimulation/LegoRobot/wheel.dae (1).json", function ( object7 ) {
-			// 	//group = new THREE.Group();
-
-			// 	//group.add(object);
-			// 	//group.Rotate(1.57);
-			// 	// robotMesh = object;
-
-			// 	object7.position.set( - 14, 4.5, - 8 );
-			// 	object7.rotateX( Math.PI / 2 );
-			// 	object7.scale.x = 0.06;
-			// 	object7.scale.y = 0.06;
-			// 	object7.scale.z = 0.06;
-			// 	object7.receiveShadow = true;
-			// 	object7.castShadow = true;
-			// 	wheel6 = object7;
-
-			// 	scene.add( object7 );
-			// } );
+		
 		}
+
+	
+
+		// var loader2 = new THREE.GLTFLoader(loadingManager);
+		// // Optional: Provide a DRACOLoader instance to decode compressed mesh data
+		// THREE.DRACOLoader.setDecoderPath( '/LegoMinstormSimulation/dracolibs' );
+		// loader2.setDRACOLoader( new THREE.DRACOLoader() );
+		// loader2.load( "LegoWheel/wheel.gltf", handle_load2 );
+		// // object;
+		// renderer.setClearColor( 0xffffff );
+		// function handle_load2( gltf2 ) {
+
+
+
+		// 	object2 = gltf2.scene.children[ 0 ];
+		// 	object2.position.set( 8, 4.5, 19 );
+		// 	object2.children[ 0 ].rotateX( - Math.PI / 2 );
+		// 	//object.children[0].rotateY(-Math.PI / 2);
+		// 	object2.children[ 0 ].scale.x = 0.06;
+		// 	object2.children[ 0 ].scale.y = 0.06;
+		// 	object2.children[ 0 ].scale.z = 0.06;
+		// 	object2.children[ 0 ].receiveShadow = true;
+		// 	object2.children[ 0 ].castShadow = true;
+		// 	wheel = object2.children[ 0 ];
+		// 	scene.add( object2.children[ 0 ] );}
+
+
+		// 	var loader3 = new THREE.GLTFLoader(loadingManager);
+
+		// 	// var loader = new THREE.GLTFLoader(loadingManager);
+		// 	// // Optional: Provide a DRACOLoader instance to decode compressed mesh data
+		// 	THREE.DRACOLoader.setDecoderPath( '/LegoMinstormSimulation/dracolibs' );
+		// 	loader3.setDRACOLoader( new THREE.DRACOLoader() );
+		// 	loader3.load( "LegoWheel/wheel.gltf", handle_load3 );
+		// function handle_load3( gltf3 ) {
+
+
+
+		// 	object3 = gltf3.scene;
+		// 	object3.position.set( -2, 5, -8  );
+		// 	object3.rotateX(  Math.PI / 2 );
+		// 	//object.children[0].rotateY(-Math.PI / 2);
+		// 	object3.scale.x = 0.05;
+		// 	object3.scale.y = 0.05;
+		// 	object3.scale.z = 0.05;
+		// 	object3.receiveShadow = true;
+		// 	object3.castShadow = true;
+		// 	wheel2 = object3;
+		// 	scene.add( object3);}
+
+			var loader2 = new THREE.GLTFLoader(loadingManager);
+
+			// var loader = new THREE.GLTFLoader(loadingManager);
+			// // Optional: Provide a DRACOLoader instance to decode compressed mesh data
+			THREE.DRACOLoader.setDecoderPath( '/LegoMinstormSimulation/dracolibs' );
+			loader2.setDRACOLoader( new THREE.DRACOLoader() );
+			loader2.load( "LegoWheel/wheel.gltf", handle_load2 );
+		function handle_load2( gltf2 ) {
+
+
+
+			object2 = gltf2.scene;
+			object2.position.set(-12, 5, -8 );
+			object2.rotateX( Math.PI / 2 );
+			//object.children[0].rotateY(-Math.PI / 2);
+			object2.scale.x = 0.05;
+			object2.scale.y = 0.05;
+			object2.scale.z = 0.05;
+			object2.receiveShadow = true;
+			object2.castShadow = true;
+			wheel = object2;
+			scene.add( object2);}
+			var loader3 = new THREE.GLTFLoader(loadingManager);
+
+			// var loader = new THREE.GLTFLoader(loadingManager);
+			// // Optional: Provide a DRACOLoader instance to decode compressed mesh data
+			THREE.DRACOLoader.setDecoderPath( '/LegoMinstormSimulation/dracolibs' );
+			loader3.setDRACOLoader( new THREE.DRACOLoader() );
+			loader3.load( "LegoWheel/wheel.gltf", handle_load3 );
+		function handle_load3( gltf3 ) {
+
+
+
+			object3 = gltf3.scene;
+			object3.position.set(-2, 5, -8 );
+			object3.rotateX( Math.PI / 2 );
+			//object.children[0].rotateY(-Math.PI / 2);
+			object3.scale.x = 0.05;
+			object3.scale.y = 0.05;
+			object3.scale.z = 0.05;
+			object3.receiveShadow = true;
+			object3.castShadow = true;
+			wheel2 = object3;
+			scene.add( object3);}
+
+			
+			var loader4 = new THREE.GLTFLoader(loadingManager);
+
+			// var loader = new THREE.GLTFLoader(loadingManager);
+			// // Optional: Provide a DRACOLoader instance to decode compressed mesh data
+			THREE.DRACOLoader.setDecoderPath( '/LegoMinstormSimulation/dracolibs' );
+			loader4.setDRACOLoader( new THREE.DRACOLoader() );
+			loader4.load( "LegoWheel/wheel.gltf", handle_load4 );
+		function handle_load4( gltf4 ) {
+
+
+
+			object4 = gltf4.scene;
+			object4.position.set( 8, 5, -8 );
+			object4.rotateX( Math.PI / 2 );
+			//object.children[0].rotateY(-Math.PI / 2);
+			object4.scale.x = 0.05;
+			object4.scale.y = 0.05;
+			object4.scale.z = 0.05;
+			object4.receiveShadow = true;
+			object4.castShadow = true;
+			wheel3 = object4;
+			scene.add( object4);}
+
+
+			var loader5 = new THREE.GLTFLoader(loadingManager);
+
+			// var loader = new THREE.GLTFLoader(loadingManager);
+			// // Optional: Provide a DRACOLoader instance to decode compressed mesh data
+			THREE.DRACOLoader.setDecoderPath( '/LegoMinstormSimulation/dracolibs' );
+			loader5.setDRACOLoader( new THREE.DRACOLoader() );
+			loader5.load( "LegoWheel/wheel.gltf", handle_load5 );
+		function handle_load5( gltf5 ) {
+
+
+
+			object5 = gltf5.scene;
+			object5.position.set(  8,5, 17 );
+			object5.rotateX( - Math.PI / 2 );
+			//object.children[0].rotateY(-Math.PI / 2);
+			object5.scale.x = 0.05;
+			object5.scale.y = 0.05;
+			object5.scale.z = 0.05;
+			object5.receiveShadow = true;
+			object5.castShadow = true;
+			wheel4 = object5;
+			scene.add( object5 );}
+
+
+			var loader6 = new THREE.GLTFLoader(loadingManager);
+
+			// var loader = new THREE.GLTFLoader(loadingManager);
+			// // Optional: Provide a DRACOLoader instance to decode compressed mesh data
+			THREE.DRACOLoader.setDecoderPath( '/LegoMinstormSimulation/dracolibs' );
+			loader6.setDRACOLoader( new THREE.DRACOLoader() );
+			loader6.load( "LegoWheel/wheel.gltf", handle_load6 );
+		function handle_load6( gltf6 ) {
+
+
+
+			object6 = gltf6.scene;
+			object6.position.set( - 2,5, 17 );
+			object6.children[ 0 ].rotateX( - Math.PI / 2 );
+			//object.children[0].rotateY(-Math.PI / 2);
+			object6.scale.x = 0.05;
+			object6.scale.y = 0.05;
+			object6.scale.z = 0.05;
+			object6.receiveShadow = true;
+			object6.castShadow = true;
+			wheel5 = object6;
+			scene.add( object6);}
+
+
+			var loader7 = new THREE.GLTFLoader(loadingManager);
+
+			// var loader = new THREE.GLTFLoader(loadingManager);
+			// // Optional: Provide a DRACOLoader instance to decode compressed mesh data
+			THREE.DRACOLoader.setDecoderPath( '/LegoMinstormSimulation/dracolibs' );
+			loader7.setDRACOLoader( new THREE.DRACOLoader() );
+			loader7.load( "LegoWheel/wheel.gltf", handle_load7 );
+		function handle_load7( gltf7 ) {
+
+
+
+			object7 = gltf7.scene;
+			object7.position.set( - 12,5, 17 );
+		//	object7.children[ 1 ].position.set( - 15,20, 15 );
+			object7.rotateX( - Math.PI / 2 );
+			//object.children[0].rotateY(-Math.PI / 2);
+			object7.scale.x = 0.05;
+			object7.scale.y = 0.05;
+			object7.scale.z = 0.05;
+			object7.receiveShadow = true;
+			object7.castShadow = true;
+			wheel6 = object7;
+			scene.add( object7);}
+		
 	}
-}
+	}
+
 
 function animate() {
 	//debugger;
 	//ultrasonicSensorFunction();
 	requestAnimationFrame( animate );
 
-	if ( true) {
+	if ( body!=undefined) {
 		var position = new THREE.Vector3();
 		body.getWorldPosition( position );
 		robotX = position.x;
@@ -508,7 +562,10 @@ function animate() {
 
 		camera.lookAt( new THREE.Vector3( body.x, body.y, body.z ) );
 
-
+		if (window.innerWidth >=1400){
+			document.getElementById('change').innerHTML = 'Hide Sensor Results';}
+	  if ( window.innerWidth<1400){
+		document.getElementById('change').innerHTML = 'Hide Sensor ';}
 		simulation();
 	
 
@@ -517,38 +574,38 @@ function animate() {
 
 	 
 
-	// Keyboard movement inputs6
-	// if ( keyboard[ 87 ] ) {
-	// 	// W key
-	// 	camera.position.x += Math.sin( camera.rotation.y ) * 4;
-	// 	camera.position.z += - Math.cos( camera.rotation.y ) * 4;
-	// }
-	// if ( keyboard[ 83 ] ) {
-	// 	// S key
-	// 	camera.position.x -= Math.sin( camera.rotation.y ) * 4;
-	// 	camera.position.z -= - Math.cos( camera.rotation.y ) * 4;
-	// }
-	// if ( keyboard[ 65 ] ) {
-	// 	// A key
-	// 	// Redirect motion by 90 degrees
-	// 	camera.position.x -= Math.sin( camera.rotation.y + Math.PI / 2 ) * 4;
-	// 	camera.position.z -= - Math.cos( camera.rotation.y + Math.PI / 2 ) * 4;
-	// }
-	// if ( keyboard[ 68 ] ) {
-	// 	// D key
-	// 	camera.position.x -= Math.sin( camera.rotation.y - Math.PI / 2 ) * 4;
-	// 	camera.position.z -= - Math.cos( camera.rotation.y - Math.PI / 2 ) * 4;
-	// }
+	//Keyboard movement inputs6
+	if ( keyboard[ 87 ] ) {
+		// W key
+		camera.position.x += Math.sin( camera.rotation.y ) * 4;
+		camera.position.z += - Math.cos( camera.rotation.y ) * 4;
+	}
+	if ( keyboard[ 83 ] ) {
+		// S key
+		camera.position.x -= Math.sin( camera.rotation.y ) * 4;
+		camera.position.z -= - Math.cos( camera.rotation.y ) * 4;
+	}
+	if ( keyboard[ 65 ] ) {
+		// A key
+		// Redirect motion by 90 degrees
+		camera.position.x -= Math.sin( camera.rotation.y + Math.PI / 2 ) * 4;
+		camera.position.z -= - Math.cos( camera.rotation.y + Math.PI / 2 ) * 4;
+	}
+	if ( keyboard[ 68 ] ) {
+		// D key
+		camera.position.x -= Math.sin( camera.rotation.y - Math.PI / 2 ) * 4;
+		camera.position.z -= - Math.cos( camera.rotation.y - Math.PI / 2 ) * 4;
+	}
 
-	// // Keyboard turn inputs
-	// if ( keyboard[ 37 ] ) {
-	// 	// left arrow key
-	// 	camera.rotation.y -= player.turnSpeed;
-	// }
-	// if ( keyboard[ 39 ] ) {
-	// 	// right arrow key
-	// 	camera.rotation.y += player.turnSpeed;
-	// }
+	// Keyboard turn inputs
+	if ( keyboard[ 37 ] ) {
+		// left arrow key
+		camera.rotation.y -= player.turnSpeed;
+	}
+	if ( keyboard[ 39 ] ) {
+		// right arrow key
+		camera.rotation.y += player.turnSpeed;
+	}
 	// if (canvas != null) {
 	//   console.log("in");
 	//   document.getElementById("Colour").innerHTML = "in";
@@ -641,10 +698,12 @@ function onTransitionEnd( event ) {
 
 function changeIntoNight(){
 light.intensity = 0.2;
+colourSensorAmbient =    light.intensity * 100;
 }
 
 function changeIntoMorning(){
 	light.intensity = 0.7;
+	colourSensorAmbient =    light.intensity * 100;
 
 }
 window.addEventListener( "keydown", keyDown );

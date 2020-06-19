@@ -377,14 +377,14 @@ function moveRobot( hyp ) {
 
 	}
 
-// if (rotate==false){
+if (rotate==false){
 
-// 	wheel.rotateY( ( hyp * 0.02 ) / 0.033 );
-// 	wheel2.rotateY( ( hyp * 0.02 ) / 0.033 );
-// 	wheel3.rotateY( ( hyp * 0.02 ) / 0.033 );
-// 	wheel4.rotateY( ( hyp * 0.02 ) / 0.033 );
-// 	wheel5.rotateY( ( hyp * 0.02 ) / 0.033 );
-// 	wheel6.rotateY( ( hyp * 0.02 ) / 0.033 );}
+	wheel.rotateY( ( hyp * 0.02 ) / 0.033 );
+	wheel2.rotateY( ( hyp * 0.02 ) / 0.033 );
+	wheel3.rotateY( ( hyp * 0.02 ) / 0.033 );
+	wheel4.rotateY( ( hyp * 0.02 ) / 0.033 );
+	wheel5.rotateY( ( hyp * 0.02 ) / 0.033 );
+	wheel6.rotateY( ( hyp * 0.02 ) / 0.033 );}
 	}
 }
 function stopMoving() {
@@ -418,77 +418,77 @@ function resetAngle(){
 function rotateRobot( ang ) {
 
 	if (rotate == true){
-	// var x = wheel.position.x - robotX;
-	// // //console.log (x);
+	var x = wheel.position.x - robotX;
+	// //console.log (x);
 
-	// var z = wheel.position.z - robotZ;
-	// // //console.log (z);
-	// var x1 = x * Math.cos( ang ) - z * Math.sin( ang );
-	// // //console.log (x1);
-	// var z1 = z * Math.cos( ang ) + x * Math.sin( ang );
-	// // //console.log (z1);
-	// wheel.position.x = x1 + robotX;
-	// wheel.position.z = z1 + robotZ;
+	var z = wheel.position.z - robotZ;
+	// //console.log (z);
+	var x1 = x * Math.cos( ang ) - z * Math.sin( ang );
+	// //console.log (x1);
+	var z1 = z * Math.cos( ang ) + x * Math.sin( ang );
+	// //console.log (z1);
+	wheel.position.x = x1 + robotX;
+	wheel.position.z = z1 + robotZ;
 
-	// var x = wheel2.position.x - robotX;
-	// // //console.log (x);
+	var x = wheel2.position.x - robotX;
+	// //console.log (x);
 
-	// var z = wheel2.position.z - robotZ;
-	// // //console.log (z);
-	// var x1 = x * Math.cos( ang ) - z * Math.sin( ang );
-	// // //console.log (x1);
-	// var z1 = z * Math.cos( ang ) + x * Math.sin( ang );
-	// // //console.log (z1);
-	// wheel2.position.x = x1 + robotX;
-	// wheel2.position.z = z1 + robotZ;
+	var z = wheel2.position.z - robotZ;
+	// //console.log (z);
+	var x1 = x * Math.cos( ang ) - z * Math.sin( ang );
+	// //console.log (x1);
+	var z1 = z * Math.cos( ang ) + x * Math.sin( ang );
+	// //console.log (z1);
+	wheel2.position.x = x1 + robotX;
+	wheel2.position.z = z1 + robotZ;
 
-	// var x = wheel3.position.x - robotX;
-	// // //console.log (x);
+	var x = wheel3.position.x - robotX;
+	// //console.log (x);
 
-	// var z = wheel3.position.z - robotZ;
-	// // //console.log (z);
-	// var x1 = x * Math.cos( ang ) - z * Math.sin( ang );
-	// // //console.log (x1);
-	// var z1 = z * Math.cos( ang ) + x * Math.sin( ang );
-	// // //console.log (z1);
-	// wheel3.position.x = x1 + robotX;
-	// wheel3.position.z = z1 + robotZ;
+	var z = wheel3.position.z - robotZ;
+	// //console.log (z);
+	var x1 = x * Math.cos( ang ) - z * Math.sin( ang );
+	// //console.log (x1);
+	var z1 = z * Math.cos( ang ) + x * Math.sin( ang );
+	// //console.log (z1);
+	wheel3.position.x = x1 + robotX;
+	wheel3.position.z = z1 + robotZ;
 
-	// var x = wheel4.position.x - robotX;
-	// // //console.log (x);
+	var x = wheel4.position.x - robotX;
+	// //console.log (x);
 
-	// var z = wheel4.position.z - robotZ;
-	// // //console.log (z);
-	// var x1 = x * Math.cos( ang ) - z * Math.sin( ang );
-	// // //console.log (x1);
-	// var z1 = z * Math.cos( ang ) + x * Math.sin( ang );
-	// // //console.log (z1);
-	// wheel4.position.x = x1 + robotX;
-	// wheel4.position.z = z1 + robotZ;
+	var z = wheel4.position.z - robotZ;
+	// //console.log (z);
+	var x1 = x * Math.cos( ang ) - z * Math.sin( ang );
+	// //console.log (x1);
+	var z1 = z * Math.cos( ang ) + x * Math.sin( ang );
+	// //console.log (z1);
+	wheel4.position.x = x1 + robotX;
+	wheel4.position.z = z1 + robotZ;
 
-	// var x = wheel5.position.x - robotX;
-	// // //console.log (x);
+	var x = wheel5.position.x - robotX;
+	// //console.log (x);
 
-	// var z = wheel5.position.z - robotZ;
-	// // //console.log (z);
-	// var x1 = x * Math.cos( ang ) - z * Math.sin( ang );
-	// // //console.log (x1);
-	// var z1 = z * Math.cos( ang ) + x * Math.sin( ang );
-	// // //console.log (z1);
-	// wheel5.position.x = x1 + robotX;
-	// wheel5.position.z = z1 + robotZ;
+	var z = wheel5.position.z - robotZ;
+	// //console.log (z);
+	var x1 = x * Math.cos( ang ) - z * Math.sin( ang );
+	// //console.log (x1);
+	var z1 = z * Math.cos( ang ) + x * Math.sin( ang );
+	// //console.log (z1);
+	wheel5.position.x = x1 + robotX;
+	wheel5.position.z = z1 + robotZ;
 
-	// var x = wheel6.position.x - robotX;
-	// // //console.log (x);
+	var x = wheel6.position.x - robotX;
+	// //console.log (x);
 
-	// var z = wheel6.position.z - robotZ;
-	// // //console.log (z);
-	// var x1 = x * Math.cos( ang ) - z * Math.sin( ang );
-	// // //console.log (x1);
-	// var z1 = z * Math.cos( ang ) + x * Math.sin( ang );
-	// // //console.log (z1);
-	// wheel6.position.x = x1 + robotX;
-	// wheel6.position.z = z1 + robotZ;
+	var z = wheel6.position.z - robotZ;
+	// //console.log (z);
+	var x1 = x * Math.cos( ang ) - z * Math.sin( ang );
+	// //console.log (x1);
+	var z1 = z * Math.cos( ang ) + x * Math.sin( ang );
+	// //console.log (z1);
+	wheel6.position.x = x1 + robotX;
+	wheel6.position.z = z1 + robotZ;
 
 	var x = head.x - robotX;
 	// //console.log (x);
